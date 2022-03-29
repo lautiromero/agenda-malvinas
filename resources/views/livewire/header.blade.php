@@ -1,0 +1,146 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<nav x-data="{ open : false }">
+    <div class="mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-14 sm:h-auto">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+
+            <!-- Mobile menu button-->
+          <button type="button" x-on:click="open=true" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Abrir menu</span>
+            <!--
+              Icon when menu is closed.
+
+              Heroicon name: outline/menu
+
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!--
+              Icon when menu is open.
+
+              Heroicon name: outline/x
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        {{-- redes --}}
+        <div class="absolute hidden sm:flex space-x-0.5 right-0 top-4">
+          <a href="https://twitter.com/Agenda_Malvinas" target="_blank"><x-forkawesome-twitter-square class="w-6 text-gray-500"/></a>
+          <a href="https://www.facebook.com/AgendaMalvinas" target="_blank"><x-forkawesome-facebook-square class="w-6 text-gray-500"/></a>
+          <a href="https://www.instagram.com/agendamalvinas/" target="_blank"><x-forkawesome-instagram class="w-6 text-gray-500"/></a>
+          <a href="https://www.youtube.com/channel/UCMAAu193aa8b_V31Cz8ETgw" target="_blank"><x-forkawesome-youtube-square class="w-6 text-gray-500"/></a>
+        </div>
+        {{-- MENU DESKTOP --}}
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between sm:py-7">
+            <div class="hidden sm:flex items-center sm:ml-6 w-3/12">
+                <div class="flex space-x-7">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <label class="relative block">
+                    <span class="sr-only">Buscar</span>
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                        <x-akar-search class="h-4 w-4 text-gray-600" viewBox="0 0 20 20" />
+                    </span>
+                    <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-cyan-500 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm" placeholder="Buscar..." type="text" name="search"/>
+                  </label>
+
+                  <a href="#" class="text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">CONTACTO</a>
+                </div>
+            </div>
+
+            {{-- logo --}}
+
+            <div class="flex-shrink-0 flex flex-1 flex-col items-center justify-center">
+                <a href="/">
+                    <img class="block lg:hidden h-8 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
+                    <img class="hidden lg:block h-16 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
+                </a>
+
+                <div class="hidden sm:block mx-auto pl-3 text-base text-gray-500">
+                  <div class="inline-block capitalize">
+                    <x-akar-calendar class="w-3 inline pb-1" />
+                    @php
+                        use Illuminate\Support\Carbon;
+                        $date = Carbon::now();
+                    @endphp
+                    {{$date->translatedFormat('l j \d\e F');}}
+                    |
+                  </div>
+                    @livewire('weather-component')
+                </div>
+            </div>
+
+          <div class="hidden sm:flex items-center sm:mr-6 w-2/12 flex-row-reverse">
+            <div class="flex space-x-7">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-cyan-500 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">DONACIÓN</a>
+
+
+
+            </div>
+          </div>
+        </div>
+
+        {{-- perfil menu --}}
+
+        @auth
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+                <!-- Profile dropdown -->
+                <div class="ml-3 relative" x-data="{ open:false }">
+                <div>
+                    <button x-on:click="open=true" type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="sr-only">Abrir menu de usuario</span>
+                    <img class="h-8 w-8 rounded-full" src="{{ auth()->user()->profile_photo_url }}" alt="foto de perfil">
+                    </button>
+                </div>
+
+                <div x-show="open" x-on:click.away="open=false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-cyan-500 ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                    <!-- Active: "bg-gray-100", Not Active: "" -->
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Panel</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Mi perfil</a>
+
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
+                    <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2" @click.prevent="$root.submit();">Cerrar sesión</a>
+                    </form>
+
+                </div>
+                </div>
+            </div>
+
+        @else
+
+        <a href="{{route('login')}}" class="hidden sm:block text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">INGRESAR</a>
+        @endauth
+
+
+
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden bg-cyan-500" id="mobile-menu" x-show="open" x-on:click.away="open=false">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+
+        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+      </div>
+    </div>
+
+    <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-slate-500">
+      @foreach ($categories as $category)
+      <a href="" class="inline-block text-white py-3 uppercase text-sm tracking-wide">{{$category->name}}</a>
+      @endforeach
+    </div>
+
+</nav>
