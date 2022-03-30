@@ -37,7 +37,7 @@
           <a href="https://www.youtube.com/channel/UCMAAu193aa8b_V31Cz8ETgw" target="_blank"><x-forkawesome-youtube-square class="w-6 text-gray-500"/></a>
         </div>
         {{-- MENU DESKTOP --}}
-        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between sm:py-7">
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between sm:py-2">
             <div class="hidden sm:flex items-center sm:ml-6 w-3/12">
                 <div class="flex space-x-7">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -55,13 +55,13 @@
 
             {{-- logo --}}
 
-            <div class="flex-shrink-0 flex flex-1 flex-col items-center justify-center">
+            <div class="flex-shrink-0 flex flex-1 flex-col items-center justify-center sm:pt-4">
                 <a href="/">
                     <img class="block lg:hidden h-8 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
                     <img class="hidden lg:block h-16 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
                 </a>
-
-                <div class="hidden sm:block mx-auto pl-3 text-base text-gray-500">
+                {{-- widget --}}
+                <div class="hidden sm:block mx-auto mt-2 pl-3 text-base text-gray-500">
                   <div class="inline-block capitalize">
                     <x-akar-calendar class="w-3 inline pb-1" />
                     @php
@@ -137,7 +137,7 @@
       </div>
     </div>
 
-    <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-slate-500">
+    <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-cyan-600">
       @foreach ($categories as $category)
       <a href="" class="inline-block text-white py-3 uppercase text-sm tracking-wide">{{$category->name}}</a>
       @endforeach
