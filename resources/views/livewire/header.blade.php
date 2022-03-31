@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <nav x-data="{ open : false }">
     <div class="mx-auto px-2 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-between h-14 sm:h-auto">
+      <div class="relative flex items-center justify-between h-14 sm:h-auto sm:pt-4">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
             <!-- Mobile menu button-->
@@ -30,14 +30,14 @@
           </button>
         </div>
         {{-- redes --}}
-        <div class="absolute hidden sm:flex space-x-0.5 right-0 top-4">
+        <div class="absolute hidden sm:flex space-x-0.5 right-6 top-4">
           <a href="https://twitter.com/Agenda_Malvinas" target="_blank"><x-forkawesome-twitter-square class="w-6 text-gray-500"/></a>
           <a href="https://www.facebook.com/AgendaMalvinas" target="_blank"><x-forkawesome-facebook-square class="w-6 text-gray-500"/></a>
           <a href="https://www.instagram.com/agendamalvinas/" target="_blank"><x-forkawesome-instagram class="w-6 text-gray-500"/></a>
           <a href="https://www.youtube.com/channel/UCMAAu193aa8b_V31Cz8ETgw" target="_blank"><x-forkawesome-youtube-square class="w-6 text-gray-500"/></a>
         </div>
-        {{-- MENU DESKTOP --}}
-        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between sm:py-2">
+        {{-- header --}}
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
             <div class="hidden sm:flex items-center sm:ml-6 w-3/12">
                 <div class="flex space-x-7">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -75,13 +75,10 @@
                 </div>
             </div>
 
-          <div class="hidden sm:flex items-center sm:mr-6 w-2/12 flex-row-reverse">
+          <div class="hidden sm:flex items-center sm:mx-6 flex-row-reverse">
             <div class="flex space-x-7">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="#" class="bg-cyan-500 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">DONACIÓN</a>
-
-
-
             </div>
           </div>
         </div>
@@ -89,7 +86,7 @@
         {{-- perfil menu --}}
 
         @auth
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:mr-12">
 
                 <!-- Profile dropdown -->
                 <div class="ml-3 relative" x-data="{ open:false }">
@@ -116,27 +113,43 @@
 
         @else
 
-        <a href="{{route('login')}}" class="hidden sm:block text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">INGRESAR</a>
+        <div class="hidden sm:flex items-center sm:mr-6">
+          <a href="{{route('login')}}" class="hidden sm:block text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">INGRESAR</a>    
+        </div>
+
         @endauth
-
-
 
       </div>
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden bg-cyan-500" id="mobile-menu" x-show="open" x-on:click.away="open=false">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+    <div class="sm:hidden bg-cyan-500 uppercase divide-y divide-cyan-300 shadow" id="mobile-menu" x-show="open" x-on:click.away="open=false">
+      <div class="px-2 pt-3 pb-3 space-y-1">
+        {{-- <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a> --}}
 
-        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Contacto</a>
+        
+        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Donación</a>
+        
+        @auth
+        <form method="POST" action="{{ route('logout') }}" x-data>
+          @csrf
+          <a href="{{ route('logout') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Ingresar</a>
+        </form>
+        @else
+        <a href="{{ route('login') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Ingresar</a>
+        @endauth
+      </div>
+      <div class="px-2 pt-3 pb-3 space-y-1">
+        
+      @foreach ($categories as $category)
+      <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">{{$category->name}}</a>
+      @endforeach
 
-        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
       </div>
     </div>
 
+    {{-- Desktop menu --}}
     <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-cyan-600">
       @foreach ($categories as $category)
       <a href="" class="inline-block text-white py-3 uppercase text-sm tracking-wide">{{$category->name}}</a>
