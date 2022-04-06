@@ -9,9 +9,13 @@ module.exports = {
     ],
 
     theme: {
+        container: {
+            center: true
+        },
         extend: {
             fontFamily: {
                 sans: ['Roboto', 'sans-serif'],
+                heading: ['Alegreya Sans', 'sans-serif']
             },
         },
     },

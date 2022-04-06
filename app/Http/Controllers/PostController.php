@@ -9,8 +9,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::where('status', 2)->get();
+        $main = Post::where('status', 2)->latest()->limit(6)->get();
         
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('main'));
     }
 }
