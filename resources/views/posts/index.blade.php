@@ -12,11 +12,11 @@
             </div>
 
             {{-- content --}}
-            <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
                 @foreach ($main as $post)
                     @if ($loop->first)
 
-                    <article class="col-span-2 row-span-2">
+                    <article class="hidden md:block md:col-span-2 md:row-span-2">
                         <p class="text-xs">
                             <a href="#" class="uppercase">{{$post->category->name}}</a>
                             <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
@@ -31,17 +31,29 @@
                          style="background-image:url({{Storage::url($post->image->url)}})"></a>
                     </article>
 
-                    @else
-
-                    <article>
+                    <article class="md:hidden w-full">
                         <a href="#" class="block h-48 w-full bg-cover bg-center"
                         style="background-image:url({{Storage::url($post->image->url)}})">
                         </a>
-                        <p class="text-xs pt-2">
+                        <p class="text-xs pt-2" class="w-full">
                             <a href="#" class="uppercase">{{$post->category->name}}</a>
                             <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                         </p> 
-                        <a href="#">
+                        <a href="#" class="w-full">
+                            <h2 class="text-3xl font-extrabold font-heading">{{$post->name}}</h2>
+                        </a>
+                    </article>
+                    @else
+
+                    <article class="w-full">
+                        <a href="#" class="block h-48 w-full bg-cover bg-center"
+                        style="background-image:url({{Storage::url($post->image->url)}})">
+                        </a>
+                        <p class="text-xs pt-2" class="w-full">
+                            <a href="#" class="uppercase">{{$post->category->name}}</a>
+                            <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
+                        </p> 
+                        <a href="#" class="w-full">
                             <h2 class="text-3xl font-extrabold font-heading">{{$post->name}}</h2>
                         </a>
                     </article>
