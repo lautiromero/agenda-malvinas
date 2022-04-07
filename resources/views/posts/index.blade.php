@@ -61,7 +61,28 @@
                     @endif
                 @endforeach
             </div>
+
+            {{-- banner home --}}
+            <div class="w-full">
+                <a href="www.google.com">
+                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
+                </a>
+            </div>
+
+            {{-- divider --}}
+
+            <div class="py-10 text-center justify-center">
+                <div class="divider flex items-center mx-auto w-4/6 py-4 text-xl font-bold text-gray-500">IMPORTANTE</div>
+                <a href="#">
+                    <h2 class="text-5xl	font-extrabold font-heading md:px-4 text-cyan-500">Equinor: los que el albertismo no puede hacer
+                        desaparecer de lo que el kirchnerismo dijo, advirtió y
+                        denunció</h2>
+                </a>
+                <div class="divider divider-bottom flex items-center mx-auto w-4/6 py-6"></div>
+            </div>
+
         </div>
+
 
         {{-- sidebar publi --}}
         <div class="hidden sm:block w-1/6">

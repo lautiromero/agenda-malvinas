@@ -16,3 +16,24 @@ h2 {
 h4 {
     @apply text-slate-700 font-light;
 }
+
+.divider:after, .divider:before {
+    display: block;
+    content: '';
+    height: 1px;
+    background-color: #696969;
+    width: 100%;
+}
+
+.divider:before {
+    margin-right: 10px;
+}
+
+.divider:after {
+    margin-left: 10px;
+}
+
+.divider-bottom:after, .divider-bottom:before {
+    margin-left: 0;
+    margin-right: 0;
+}
