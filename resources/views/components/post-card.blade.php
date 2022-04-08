@@ -1,5 +1,5 @@
 @props(['post'])
-<article class="w-full">
+<article {{ $attributes->merge(['class' => 'w-full']) }}>
     <a href="#" class="block h-48 w-full bg-cover bg-center"
     style="background-image:url({{Storage::url($post->image->url)}})">
     </a>

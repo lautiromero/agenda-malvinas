@@ -9,6 +9,10 @@
     @apply px-2 md:px-12 lg:px-14;
 }
 
+p, span {
+    @apply text-slate-800;
+}
+
 h2 {
     @apply text-slate-800;
 }

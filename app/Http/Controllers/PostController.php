@@ -14,22 +14,22 @@ class PostController extends Controller
 
         $actual = Post::where('status', 2)->latest()->offset(6)->limit(9)->get();
 
-        // $important = Tag::where('name', 'importante')->first()->get();
-
         //Buscamos el tag con nombre importante y lo convertimos en un objeto
         $important_tag = Tag::where('name', 'importante')->first();
 
         //Formulamos la query con los posts relacionados
         $importants = $important_tag->posts()->where('status', 2)->latest()->limit(2)->get();
 
-        $more = 6;
+        $opinion_tag = Tag::where('slug', 'opinion')->first();
 
-        $opinion = 5;
+        $opinions = $opinion_tag->posts()->where('status', 2)->latest()->limit(5)->get();
+        
+        $more = Post::where('status', 2)->latest()->offset(15)->limit(6)->get();;
 
         $most_viewed = 4;
 
         $video = 1;
         
-        return view('posts.index', compact('main', 'actual', 'importants'));
+        return view('posts.index', compact('main', 'actual', 'importants', 'opinions', 'more'));
     }
 }
