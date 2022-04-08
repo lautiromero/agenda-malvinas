@@ -37,3 +37,12 @@ h4 {
     margin-left: 0;
     margin-right: 0;
 }
+
+.divider-right:after {
+    display: block;
+    content: '';
+    height: 1px;
+    background-color: #696969;
+    width: 100%;
+    margin-left: 10px;
+}

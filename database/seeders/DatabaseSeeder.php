@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserSeeder::class);
         $this->call(CategoriesSeeder::class);
-        Tag::factory(8)->create();
+        // Tag::factory(8)->create();
+        $this->call(TagSeeder::class);
         $this->call(PostSeeder::class);
         //$this->call(AdSeeder::class);
     }

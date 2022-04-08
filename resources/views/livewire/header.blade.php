@@ -78,7 +78,7 @@
           <div class="hidden sm:flex items-center sm:mx-6 flex-row-reverse">
             <div class="flex space-x-7">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-cyan-500 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">DONACIÓN</a>
+              <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">DONACIÓN</a>
             </div>
           </div>
         </div>
