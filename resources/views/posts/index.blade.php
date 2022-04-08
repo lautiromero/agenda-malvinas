@@ -67,7 +67,7 @@
                 <div class="divider-right flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
 
-            <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-10">
+            <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
                 @foreach ($actual as $post)
 
                 <x-post-card :post="$post" />
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-10">
+            <div class="py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-8">
                 
                 @foreach ($opinions as $post)
                 @if ($loop->first)
@@ -204,7 +204,7 @@
                 <div class="divider-right flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
 
-            <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-10">
+            <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
                 @foreach ($more as $post)
 
                 <x-post-card :post="$post" />
