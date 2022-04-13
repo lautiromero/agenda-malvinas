@@ -32,4 +32,10 @@ class Post extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    //incrementar contador de visitas
+    public function incrementReadCount() {
+        $this->reads++;
+        return $this->save();
+    }
 }

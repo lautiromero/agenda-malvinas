@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="flex custom-container space-x-8">
+    <div class="flex custom-container space-x-8 pb-8">
 
         {{-- section --}}
 
@@ -91,7 +91,7 @@
 
             <div class="py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-8">
                 
-                @foreach ($opinions as $post)
+            @foreach ($opinions as $post)
                 @if ($loop->first)
 
                 <article class="md:col-span-2 md:row-span-3">
@@ -111,14 +111,14 @@
 
                 @elseif ($loop->index == 1)
 
-                <article class="bg-zinc-500 flex flex-col items-center justify-around text-center rounded-md md:row-span-3 py-6 px-2">
+                <article class="bg-zinc-500 flex flex-col items-center justify-around text-center rounded-md md:row-span-3 py-5 px-3">
                     <div>
                         <p class="text-xs text-white mb-6">
                             <a href="#" class="uppercase">{{$post->category->name}}</a>
                             <span class="text-white"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                         </p> 
                         <a href="#">
-                            <h2 class="text-4xl text-white font-extrabold font-heading mb-1">{{$post->name}}</h2>
+                            <h2 class="text-3xl text-white font-extrabold font-heading mb-1">{{$post->name}}</h2>
                         </a>
                     </div>
                     <div>
@@ -138,9 +138,9 @@
                         <span class="text-white inline-block"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
                     <a href="#">
-                        <h2 class="text-xl text-white font-bold font-heading mb-1 leading-none">{{$post->name}}</h2>
+                        <h2 class="text-xl text-white font-bold font-heading leading-none">{{$post->name}}</h2>
                     </a>
-                    <div class="flex justify-around items-center">
+                    <div class="flex w-full px-4 items-center">
                         <img class="h-12 w-12 rounded-full" src="{{ $post->user->profile_photo_url }}" alt="foto de perfil">
                         <p class="text-xs font-bold text-white pl-3 uppercase">
                             Por {{$post->user->name}}
@@ -157,9 +157,9 @@
                         <span class="text-zinc-500 inline-block"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
                     <a href="#">
-                        <h2 class="text-xl text-zinc-500 font-bold font-heading mb-1 leading-none">{{$post->name}}</h2>
+                        <h2 class="text-xl text-zinc-500 font-bold font-heading leading-none">{{$post->name}}</h2>
                     </a>
-                    <div class="flex justify-around items-center">
+                    <div class="flex w-full px-4 items-center">
                         <img class="border border-zinc-400 h-12 w-12 rounded-full" src="{{ $post->user->profile_photo_url }}" alt="foto de perfil">
                         <p class="text-xs font-bold text-zinc-500 pl-3 uppercase">
                             Por {{$post->user->name}}
@@ -204,7 +204,7 @@
                 <div class="divider-right flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
 
-            <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
+            <div class="pt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
                 @foreach ($more as $post)
 
                 <x-post-card :post="$post" />
@@ -226,10 +226,74 @@
         <div class="hidden sm:block w-1/6">
 
             <a href="www.google.com">
-                <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
+                <img class="block w-full h-auto sticky top-36" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
             </a>
 
         </div>
         
     </div>
+
+    <div class="custom-container">
+    
+        <div class="w-full text-center pt-8 pb-4">
+            <div class="text-cyan-600 inline whitespace-nowrap text-3xl px-4 py-2 rounded-lg border border-cyan-500 font-extrabold font-heading">MÁS LEÍDAS</div>
+        </div>
+
+        <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-8">
+
+        @php
+        // Creamos una bandera para hacer el top 4 mas vistas
+        $contador = 1;    
+        @endphp
+
+        @foreach($vieweds as $post)
+
+        <article class="w-full">
+            <a href="#" class="block h-48 w-full bg-cover bg-center"
+            style="background-image:url({{Storage::url($post->image->url)}})">
+            </a>
+            <p class="text-xs pt-2 w-full flex items-center">
+                <span class="text-cyan-600 text-6xl font-extrabold font-heading pr-2 pb-1">{{$contador++}}</span>
+                <a href="#" class="uppercase">{{$post->category->name}}</a>
+                <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
+            </p> 
+            <a href="#" class="w-full">
+                <h2 class="text-2xl font-extrabold font-heading">{{$post->name}}</h2>
+            </a>
+        </article>
+
+        @endforeach
+        </div>
+    </div>
+
+    <div class="flex custom-container space-x-8 py-8">
+    
+        <div class="w-full sm:w-5/6">
+            
+            {{-- title video --}}
+            <div class="flex items-center space-x-3 py-6">
+                <div class="text-cyan-600 whitespace-nowrap text-2xl px-4 py-1 mr-2 rounded-lg border border-cyan-500 font-extrabold font-heading">VIDEO DESTACADO</div>
+                <div>
+                    <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
+                </div>
+                <div class="divider-right flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
+            </div>
+
+            <div class="h-[28rem] w-full bg-cover bg-center"
+            style="background-image:url({{Storage::url($video->image->url)}})">
+
+            </div>
+        </div>
+
+
+        {{-- sidebar publi --}}
+        <div class="hidden sm:flex items-center pt-3 w-1/6">
+
+            <a href="www.google.com">
+                <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
+            </a>
+
+        </div>
+    </div>
+
 </x-app-layout>
