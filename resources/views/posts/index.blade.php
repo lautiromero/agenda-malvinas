@@ -51,11 +51,11 @@
             {{-- divider importante --}}
 
             <div class="py-10 text-center justify-center">
-                <div class="divider flex items-center mx-auto w-4/6 py-4 text-xl font-bold text-gray-500">IMPORTANTE</div>
+                <div class="divider flex items-center mx-auto w-5/6 md:w-4/6 py-4 text-xl font-bold text-gray-500">IMPORTANTE</div>
                 <a href="#">
-                    <h2 class="text-5xl	font-extrabold font-heading md:px-4 text-cyan-500">{{$importants[0]->name}}</h2>
+                    <h2 class="text-4xl md:text-5xl	font-extrabold font-heading md:px-4 text-cyan-500">{{$importants[0]->name}}</h2>
                 </a>
-                <div class="divider divider-bottom flex items-center mx-auto w-4/6 py-6"></div>
+                <div class="divider divider-bottom flex items-center mx-auto w-5/6 md:w-4/6 py-6"></div>
             </div>
 
             {{-- title actualidad --}}
@@ -64,7 +64,7 @@
                 <div>
                     <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
                 </div>
-                <div class="divider-right flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
+                <div class="hidden divider-right md:flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
 
             <div class="py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
@@ -140,7 +140,7 @@
                     <a href="#">
                         <h2 class="text-xl text-white font-bold font-heading leading-none">{{$post->name}}</h2>
                     </a>
-                    <div class="flex w-full px-4 items-center">
+                    <div class="flex w-full px-4 items-center justify-center md:justify-start">
                         <img class="h-12 w-12 rounded-full" src="{{ $post->user->profile_photo_url }}" alt="foto de perfil">
                         <p class="text-xs font-bold text-white pl-3 uppercase">
                             Por {{$post->user->name}}
@@ -159,7 +159,7 @@
                     <a href="#">
                         <h2 class="text-xl text-zinc-500 font-bold font-heading leading-none">{{$post->name}}</h2>
                     </a>
-                    <div class="flex w-full px-4 items-center">
+                    <div class="flex w-full px-4 items-center justify-center md:justify-start">
                         <img class="border border-zinc-400 h-12 w-12 rounded-full" src="{{ $post->user->profile_photo_url }}" alt="foto de perfil">
                         <p class="text-xs font-bold text-zinc-500 pl-3 uppercase">
                             Por {{$post->user->name}}
@@ -181,11 +181,11 @@
             {{-- divider importante --}}
 
             <div class="py-10 text-center justify-center">
-                <div class="divider flex items-center mx-auto w-4/6 py-4 text-xl font-bold text-gray-500">IMPORTANTE</div>
+                <div class="divider flex items-center mx-auto w-5/6 md:w-4/6 py-4 text-xl font-bold text-gray-500">IMPORTANTE</div>
                 <a href="#">
-                    <h2 class="text-5xl	font-extrabold font-heading md:px-4 text-cyan-500">{{$importants[1]->name}}</h2>
+                    <h2 class="text-4xl md:text-5xl	font-extrabold font-heading md:px-4 text-cyan-500">{{$importants[1]->name}}</h2>
                 </a>
-                <div class="divider divider-bottom flex items-center mx-auto w-4/6 py-6"></div>
+                <div class="divider divider-bottom flex items-center mx-auto w-5/6 md:w-4/6 py-6"></div>
             </div>
 
             {{-- banner home --}}
@@ -201,7 +201,7 @@
                 <div>
                     <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
                 </div>
-                <div class="divider-right flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
+                <div class="hidden divider-right md:flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
 
             <div class="pt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
@@ -268,7 +268,7 @@
 
     <div class="flex custom-container space-x-8 py-8">
     
-        <div class="w-full sm:w-5/6">
+        <div class="w-full sm:w-4/5">
             
             {{-- title video --}}
             <div class="flex items-center space-x-3 py-6">
@@ -276,18 +276,30 @@
                 <div>
                     <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
                 </div>
-                <div class="divider-right flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
+                <div class="hidden divider-right md:flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
 
-            <div class="h-[28rem] w-full bg-cover bg-center"
+            <div class="min-h-80 sm:h-[26rem] w-full bg-cover bg-center md:bg-left px-4 sm:px-7 py-5 sm:py-8"
             style="background-image:url({{Storage::url($video->image->url)}})">
-
+                <div class="bg-sky-500/90 h-full sm:w-2/5 p-3 sm:p-6 flex justify-center items-center flex-col text-center">
+                    <p class="text-xs pt-2 flex items-center">
+                        <a href="#" class="uppercase text-white">{{$video->category->name}}</a>
+                        <span class="text-white"> - {{\Carbon\Carbon::parse($video->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
+                    </p>
+                    <a href="#" class="w-full pb-6 pt-4">
+                        <h2 class="text-4xl text-white font-extrabold font-heading">{{$post->name}}</h2>
+                    </a>
+                    {{-- <x-forkawesome-play class="text-white border-4 font-medium border-white rounded-full p-6" /> --}}
+                    <a href="">
+                        <img class="text-white h-20 w-auto" src="{{asset('images/go-play.svg')}}" alt="Agenda malvinas">
+                    </a>
+                </div>
             </div>
         </div>
 
 
         {{-- sidebar publi --}}
-        <div class="hidden sm:flex items-center pt-3 w-1/6">
+        <div class="hidden sm:flex items-center pt-3 w-1/5">
 
             <a href="www.google.com">
                 <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">

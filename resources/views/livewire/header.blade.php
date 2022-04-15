@@ -149,7 +149,7 @@
       </div>
     </div>
 
-    {{-- Desktop menu --}}
+    {{-- Category menu --}}
     <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-cyan-600">
       @foreach ($categories as $category)
       <a href="" class="inline-block text-white py-3 uppercase text-sm tracking-wide">{{$category->name}}</a>
