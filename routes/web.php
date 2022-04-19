@@ -12,6 +12,9 @@ Route::view('donar', 'donar')->name('donar');
 Route::view('porque-agenda', 'porque-agenda')->name('porque-agenda');
 Route::view('staff', 'staff')->name('staff');
 
+Route::get('mapa-del-sitio', App\Http\Livewire\Mapa::class)->name('mapa');
+
+Route::get('contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -5,7 +5,7 @@
         {{session('info')}}
     </x-alert-info>    
     @endif
-    <div class="custom-container pb-4 md:py-12 md:w-3/4 mx-auto">
+    <div class="custom-container pb-4 md:py-8 md:w-3/4 mx-auto">
         <div class="grid md:grid-cols-2 gap-x-8">
             <div>
                 <h3 class="text-3xl md:text-4xl font-extrabold font-heading tracking-wide text-cyan-600">Ser parte de</h3>
@@ -75,8 +75,7 @@
                   id="name"
                   type="text"
                   name="name"
-                  placeholder="Nombre y apellido..."
-                  class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
+                  class="block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
                 />
                 @error('name')
                     <p class="text-red-600"><strong>{{$message}}</strong></p>
@@ -86,8 +85,7 @@
                   id="email"
                   type="text"
                   name="email"
-                  placeholder="E-mail..."
-                  class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
+                  class="block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
                 />
                 @error('email')
                     <p class="text-red-600"><strong>{{$message}}</strong></p>
@@ -97,14 +95,12 @@
                   id="comment"
                   rows="8"
                   name="comment"
-                  placeholder="Comentario..."
-                  class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
+                  class="block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
                 ></textarea>
                 @error('comment')
                     <p class="text-red-600"><strong>{{$message}}</strong></p>
                 @enderror
                 <button type="submit" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-3 py-1 mt-2 rounded-md text-sm font-medium">Enviar</button>
-              </div>
             </form>
         </div>
     </div>

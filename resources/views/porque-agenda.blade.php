@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="custom-container pb-4 md:py-12 md:w-3/4 mx-auto">
+    <div class="custom-container pb-4 md:py-8 md:w-3/4 mx-auto">
         <div class="grid md:grid-cols-2 gap-x-8">
             <div>
                 <h1 class="text-5xl md:text-6xl font-extrabold font-heading text-cyan-600 uppercase">Porque Agenda Malvinas</h1>     

@@ -49,7 +49,7 @@
                     <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-cyan-500 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm" placeholder="Buscar..." type="text" name="search"/>
                   </label>
 
-                  <a href="#" class="text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">CONTACTO</a>
+                  <a href="{{ route('contacto') }}" class="text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">CONTACTO</a>
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
       <div class="px-2 pt-3 pb-3 space-y-1">
         {{-- <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a> --}}
 
-        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Contacto</a>
+        <a href="{{ route('contacto') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Contacto</a>
         
         <a href="{{ route('donar') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Donación</a>
         

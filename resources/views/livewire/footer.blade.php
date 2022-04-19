@@ -12,7 +12,7 @@
                     <a href="{{ route('porque-agenda') }}" class="text-xl font-bold text-white uppercase">Porque agenda malvinas</a>
                 </li>
                 <li class="pb-1.5">
-                    <a href="" class="text-xl font-bold text-white uppercase">Mapa del sitio</a>
+                    <a href="{{ route('mapa') }}" class="text-xl font-bold text-white uppercase">Mapa del sitio</a>
                 </li>
             </ul>
         </div>
@@ -22,7 +22,7 @@
                     <a href="{{ route('staff') }}" class="text-xl font-bold text-white uppercase">Staff</a>
                 </li>
                 <li class="pb-1.5">
-                    <a href="" class="text-xl font-bold text-white uppercase">Contacto</a>
+                    <a href="{{ route('contacto') }}" class="text-xl font-bold text-white uppercase">Contacto</a>
                 </li>
             </ul>
         </div>

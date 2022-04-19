@@ -1,4 +1,4 @@
-<div class="flex bg-cyan-500 max-w-sm fixed left-0 bottom-12" x-data={open:true} x-show="open">
+<div class="flex bg-cyan-500 max-w-sm fixed left-0 bottom-16" x-data={open:true} x-show="open">
     <button x-on:click="open=false"><x-akar-circle-x class="text-white w-5 absolute right-2 top-5"/></button>
     <div class="w-16 flex items-center bg-cyan-600">
         <div class="p-4">
