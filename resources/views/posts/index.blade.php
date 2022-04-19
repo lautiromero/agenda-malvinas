@@ -62,7 +62,7 @@
             <div class="flex items-center space-x-3">
                 <div class="text-cyan-600 text-2xl px-4 py-1 mr-2 rounded-lg border border-cyan-500 font-extrabold font-heading">ACTUALIDAD</div>
                 <div>
-                    <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
+                    <a href="{{ route('donar') }}" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
                 </div>
                 <div class="hidden divider-right md:flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
@@ -85,7 +85,7 @@
 
                 <div class="divider divider-bottom flex items-center w-full"></div>
                 <div class="ml-10">
-                    <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
+                    <a href="{{ route('donar') }}" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
                 </div>
             </div>
 
@@ -199,7 +199,7 @@
             <div class="flex items-center space-x-3 pt-10">
                 <div class="text-cyan-600 whitespace-nowrap text-2xl px-4 py-1 mr-2 rounded-lg border border-cyan-500 font-extrabold font-heading">MÁS NOTICIAS</div>
                 <div>
-                    <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
+                    <a href="{{ route('donar') }}" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
                 </div>
                 <div class="hidden divider-right md:flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>
@@ -274,7 +274,7 @@
             <div class="flex items-center space-x-3 py-6">
                 <div class="text-cyan-600 whitespace-nowrap text-2xl px-4 py-1 mr-2 rounded-lg border border-cyan-500 font-extrabold font-heading">VIDEO DESTACADO</div>
                 <div>
-                    <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
+                    <a href="{{ route('donar') }}" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-4 py-1 rounded-md">DONAR</a>
                 </div>
                 <div class="hidden divider-right md:flex whitespace-nowrap items-center text-gray-500 w-full">SI TE GUSTA LO QUE HACEMOS, AYUDANOS A SEGUIR HACIÉNDOLO</div>
             </div>

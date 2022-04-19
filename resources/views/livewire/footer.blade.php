@@ -29,7 +29,7 @@
         <div class="tracking-wider md:text-right pl-4 md:pl-0">
             <ul class="h-full flex flex-col">
                 <li class="pb-1.5 pr-1">
-                    <a href="" class="text-xl font-bold text-white uppercase">Donar</a>
+                    <a href="{{ route('donar') }}" class="text-xl font-bold text-white uppercase">Donar</a>
                 </li>
                 <li class="pb-1.5">
                     <div class="flex space-x-0.5 md:justify-end">

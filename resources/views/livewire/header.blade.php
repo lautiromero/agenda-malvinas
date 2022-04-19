@@ -56,7 +56,7 @@
             {{-- logo --}}
 
             <div class="flex-shrink-0 flex flex-1 flex-col items-center justify-center sm:pt-4">
-                <a href="/">
+                <a href="{{ route('posts.index') }}">
                     <img class="block lg:hidden h-8 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
                     <img class="hidden lg:block h-16 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
                 </a>
@@ -78,7 +78,7 @@
           <div class="hidden sm:flex items-center sm:mx-6 flex-row-reverse">
             <div class="flex space-x-7">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">DONACIÓN</a>
+              <a href="{{ route('donar') }}" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">DONACIÓN</a>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@
         @else
 
         <div class="hidden sm:flex items-center sm:mr-6">
-          <a href="{{route('login')}}" class="hidden sm:block text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">INGRESAR</a>    
+          <a href="{{ route('login') }}" class="hidden sm:block text-gray-600 hover:bg-cyan-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-cyan-500">INGRESAR</a>    
         </div>
 
         @endauth
@@ -129,7 +129,7 @@
 
         <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Contacto</a>
         
-        <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Donación</a>
+        <a href="{{ route('donar') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Donación</a>
         
         @auth
         <form method="POST" action="{{ route('logout') }}" x-data>
