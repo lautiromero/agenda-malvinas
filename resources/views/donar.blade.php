@@ -5,23 +5,23 @@
         {{session('info')}}
     </x-alert-info>    
     @endif
-    <div class="custom-container py-12">
+    <div class="custom-container pb-4 md:py-12 max-w-screen-xl mx-auto">
         <div class="grid md:grid-cols-2 gap-x-8">
             <div>
-                <h3 class="text-5xl font-extrabold font-heading tracking-wide text-cyan-600">Ser parte de</h3>
-                <h1 class="text-7xl font-extrabold font-heading text-cyan-600">Agenda Malvinas</h1>     
-                <p class="text-2xl pt-9">
+                <h3 class="text-3xl md:text-5xl font-extrabold font-heading tracking-wide text-cyan-600">Ser parte de</h3>
+                <h1 class="text-5xl md:text-7xl font-extrabold font-heading text-cyan-600">Agenda Malvinas</h1>     
+                <p class="text-lg md:text-2xl pt-9">
                     Los contenidos de Agenda Malvinas están
                     disponibles para que todos puedan acceder a ellos,
                     pero necesitamos de ustedes para seguir
                     haciéndolos. ¿Querés aportar a Agenda Malvinas?
                 </p>
-                <p class="text-2xl">
+                <p class="text-lg md:text-2xl">
                     Tenemos distintos tipos de donaciones.
                     Prometemos darte contenido de calidad, ayudanos
                     a seguir haciéndolo.    
                 </p>                
-                <p class="text-2xl pt-9">
+                <p class="text-lg md:text-2xl pt-9">
                     Para modificar tu aporte o solicitar la baja escribinos <a class="font-extrabold" href="#">acá</a>.
                 </p>
             </div>
@@ -30,7 +30,7 @@
             </div>
             <div></div>
         </div>
-        <div class="grid md:grid-cols-4 gap-x-12 px-5 md:px-0 pt-5">
+        <div class="grid md:grid-cols-4 gap-x-12 px-12 md:px-0 pt-5">
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/300.png')}}" alt="donar 300" class="w-full">
                 <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="grid md:grid-cols-4 gap-x-12 px-5 md:px-0 pt-12">
+        <div class="grid md:grid-cols-4 gap-x-12 px-12 md:px-0 pt-12">
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/300-SUS.png')}}" alt="donar 300" class="w-full">
                 <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
@@ -68,7 +68,7 @@
             </div>
         </div>
         <div class="md:w-3/5 mx-auto py-14">
-            <h4 class="text-5xl font-extrabold text-slate-500 text-center py-7">¿Tenés alguna consulta?</h4>
+            <h4 class="text-3xl md:text-5xl font-extrabold text-slate-500 text-center py-7">¿Tenés alguna consulta?</h4>
             <form action="{{route('contacto.store')}}" method="POST">
                 @csrf
                 <label for="name" class="text-slate-600 select-none font-bold">Nombre y apellido *</label>
