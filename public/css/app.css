@@ -737,6 +737,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.mx-auto{
   margin-left: auto;
   margin-right: auto;
+}.mx-8{
+  margin-left: 2rem;
+  margin-right: 2rem;
 }.ml-3{
   margin-left: 0.75rem;
 }.-ml-px{
@@ -913,6 +916,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 24rem;
 }.max-w-6xl{
   max-width: 72rem;
+}.max-w-screen-md{
+  max-width: 768px;
+}.max-w-screen-lg{
+  max-width: 1024px;
 }.flex-1{
   flex: 1 1 0%;
 }.flex-shrink-0{
@@ -1247,6 +1254,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}.py-9{
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }.pt-6{
   padding-top: 1.5rem;
 }.pt-5{
@@ -2560,6 +2570,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 60%;
   }.md\:w-4\/6{
     width: 66.666667%;
+  }.md\:w-5\/6{
+    width: 83.333333%;
+  }.md\:w-3\/4{
+    width: 75%;
   }.md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }.md\:grid-cols-2{
@@ -2597,6 +2611,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 0px;
   }.md\:pr-0{
     padding-right: 0px;
+  }.md\:pt-12{
+    padding-top: 3rem;
+  }.md\:pt-16{
+    padding-top: 4rem;
   }.md\:text-right{
     text-align: right;
   }.md\:text-5xl{
@@ -2608,6 +2626,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   }.md\:text-2xl{
     font-size: 1.5rem;
     line-height: 2rem;
+  }.md\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }.md\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }.md\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }@media (min-width: 1024px){.lg\:col-span-4{
     grid-column: span 4 / span 4;
