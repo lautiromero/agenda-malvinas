@@ -9,7 +9,7 @@
         <div class="md:col-span-2 tracking-wider pl-4 pt-8 md:pt-0">
             <ul class="h-full flex flex-col">
                 <li class="pb-1.5">
-                    <a href="" class="text-xl font-bold text-white uppercase">Porque agenda malvinas</a>
+                    <a href="{{ route('porque-agenda') }}" class="text-xl font-bold text-white uppercase">Porque agenda malvinas</a>
                 </li>
                 <li class="pb-1.5">
                     <a href="" class="text-xl font-bold text-white uppercase">Mapa del sitio</a>
@@ -19,7 +19,7 @@
         <div class="tracking-wider pl-4 md:pl-0">
             <ul class="h-full flex flex-col">
                 <li class="pb-1.5">
-                    <a href="" class="text-xl font-bold text-white uppercase">Staff</a>
+                    <a href="{{ route('staff') }}" class="text-xl font-bold text-white uppercase">Staff</a>
                 </li>
                 <li class="pb-1.5">
                     <a href="" class="text-xl font-bold text-white uppercase">Contacto</a>

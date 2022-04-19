@@ -22,13 +22,12 @@
                     a seguir haciéndolo.    
                 </p>                
                 <p class="text-lg md:text-xl pt-9">
-                    Para modificar tu aporte o solicitar la baja escribinos <a class="font-extrabold" href="#">acá</a>.
+                    Para modificar tu aporte o solicitar la baja escribinos <a class="font-extrabold" href="#contacto">acá</a>.
                 </p>
             </div>
-            <div class="mt-6 md:mt-0 pr-5 md:pr-0">
+            <div class="mt-6 md:mt-0 pr-5 md:pr-0 flex items-center">
                 <img src="{{asset('images/islas.png')}}" alt="Islas malvinas" class="w-full"> 
             </div>
-            <div></div>
         </div>
         <div class="grid md:grid-cols-4 gap-x-12 px-12 md:px-0 pt-5 md:pt-16">
             <div class="pt-6 md:pt-0">
@@ -67,7 +66,7 @@
                 <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
             </div>
         </div>
-        <div class="md:w-3/5 mx-auto py-14">
+        <div class="md:w-3/5 mx-auto py-14" id="contacto">
             <h4 class="text-3xl md:text-5xl font-extrabold text-slate-600 text-center py-9">¿Tenés alguna consulta?</h4>
             <form action="{{route('contacto.store')}}" method="POST">
                 @csrf
