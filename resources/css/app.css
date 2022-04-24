@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .custom-container {
-    @apply px-4 md:px-12 lg:px-14;
+    @apply px-4 md:px-12 lg:px-20;
 }
 
 p, span {
@@ -49,4 +49,12 @@ h4 {
     background-color: #696969;
     width: 100%;
     margin-left: 10px;
+}
+
+.publi-background {
+    
+    background-color: #ffffff;
+    background-size: 8px 8px;
+    background-image: repeating-linear-gradient(45deg, #b8e4e4 0, #b8e4e4 1px, #ffffff 0, #ffffff 50%);
+    
 }

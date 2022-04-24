@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Agenda Malvinas'),
+    'name' => env('Agenda Malvinas'),
 
     /*
     |--------------------------------------------------------------------------

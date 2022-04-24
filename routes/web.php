@@ -4,8 +4,9 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
-
+//posts
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::get('noticia/{post}', [PostController::class, 'show'])->name('posts.show');
 
 //vistas
 Route::view('donar', 'donar')->name('donar');

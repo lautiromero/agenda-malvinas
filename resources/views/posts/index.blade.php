@@ -21,13 +21,13 @@
                             <a href="#" class="uppercase">{{$post->category->name}}</a>
                             <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                         </p> 
-                        <a href="#">
+                        <a href="{{ route('posts.show', $post) }}">
                             <h2 class="text-4xl font-extrabold font-heading mb-1">{{$post->name}}</h2>
                         </a>
-                        <a href="#">
+                        <a href="{{ route('posts.show', $post) }}">
                             <h4 class="text-xl">{{$post->extract}}</h4>
                         </a>
-                        <a href="#" class="block h-96 w-full mt-5 bg-cover bg-center"
+                        <a href="{{ route('posts.show', $post) }}" class="block h-96 w-full mt-5 bg-cover bg-center"
                          style="background-image:url({{Storage::url($post->image->url)}})"></a>
                     </article>
 
@@ -52,7 +52,7 @@
 
             <div class="py-10 text-center justify-center">
                 <div class="divider flex items-center mx-auto w-5/6 md:w-4/6 py-4 text-xl font-bold text-gray-500">IMPORTANTE</div>
-                <a href="#">
+                <a href="{{ route('posts.show', $importants[0]) }}">
                     <h2 class="text-4xl md:text-5xl	font-extrabold font-heading md:px-4 text-cyan-500">{{$importants[0]->name}}</h2>
                 </a>
                 <div class="divider divider-bottom flex items-center mx-auto w-5/6 md:w-4/6 py-6"></div>
@@ -95,14 +95,14 @@
                 @if ($loop->first)
 
                 <article class="md:col-span-2 md:row-span-3">
-                    <a href="#" class="block h-80 w-full bg-cover bg-center"
+                    <a href="{{ route('posts.show', $post) }}" class="block h-80 w-full bg-cover bg-center"
                     style="background-image:url({{Storage::url($post->image->url)}})"></a>
                     <p class="text-medium mt-5">
                         <a href="#" class="uppercase">{{$post->category->name}}</a>
                         <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
-                    <a href="#">
-                        <h2 class="text-5xl font-extrabold font-heading mb-1">{{$post->name}}</h2>
+                    <a href="{{ route('posts.show', $post) }}">
+                        <h2 class="text-4xl font-extrabold font-heading mb-1">{{$post->name}}</h2>
                     </a>
                     <p class="text-medium font-bold uppercase">
                         Por {{$post->user->name}}
@@ -117,7 +117,7 @@
                             <a href="#" class="uppercase">{{$post->category->name}}</a>
                             <span class="text-white"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                         </p> 
-                        <a href="#">
+                        <a href="{{ route('posts.show', $post) }}">
                             <h2 class="text-3xl text-white font-extrabold font-heading mb-1">{{$post->name}}</h2>
                         </a>
                     </div>
@@ -137,7 +137,7 @@
                         <a href="#" class="uppercase">{{$post->category->name}}</a>
                         <span class="text-white inline-block"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
-                    <a href="#">
+                    <a href="{{ route('posts.show', $post) }}">
                         <h2 class="text-xl text-white font-bold font-heading leading-none">{{$post->name}}</h2>
                     </a>
                     <div class="flex w-full px-4 items-center justify-center md:justify-start">
@@ -156,7 +156,7 @@
                         <a href="#" class="uppercase">{{$post->category->name}}</a>
                         <span class="text-zinc-500 inline-block"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
-                    <a href="#">
+                    <a href="{{ route('posts.show', $post) }}">
                         <h2 class="text-xl text-zinc-500 font-bold font-heading leading-none">{{$post->name}}</h2>
                     </a>
                     <div class="flex w-full px-4 items-center justify-center md:justify-start">
@@ -182,7 +182,7 @@
 
             <div class="py-10 text-center justify-center">
                 <div class="divider flex items-center mx-auto w-5/6 md:w-4/6 py-4 text-xl font-bold text-gray-500">IMPORTANTE</div>
-                <a href="#">
+                <a href="{{ route('posts.show', $importants[1]) }}">
                     <h2 class="text-4xl md:text-5xl	font-extrabold font-heading md:px-4 text-cyan-500">{{$importants[1]->name}}</h2>
                 </a>
                 <div class="divider divider-bottom flex items-center mx-auto w-5/6 md:w-4/6 py-6"></div>
@@ -249,7 +249,7 @@
         @foreach($vieweds as $post)
 
         <article class="w-full">
-            <a href="#" class="block h-48 w-full bg-cover bg-center"
+            <a href="{{ route('posts.show', $post) }}" class="block h-48 w-full bg-cover bg-center"
             style="background-image:url({{Storage::url($post->image->url)}})">
             </a>
             <p class="text-xs pt-2 w-full flex items-center">
@@ -257,7 +257,7 @@
                 <a href="#" class="uppercase">{{$post->category->name}}</a>
                 <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
             </p> 
-            <a href="#" class="w-full">
+            <a href="{{ route('posts.show', $post) }}" class="w-full">
                 <h2 class="text-2xl font-extrabold font-heading">{{$post->name}}</h2>
             </a>
         </article>
@@ -286,11 +286,11 @@
                         <a href="#" class="uppercase text-white">{{$video->category->name}}</a>
                         <span class="text-white"> - {{\Carbon\Carbon::parse($video->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p>
-                    <a href="#" class="w-full pb-6 pt-4">
+                    <a href="{{ route('posts.show', $video) }}" class="w-full pb-6 pt-4">
                         <h2 class="text-4xl text-white font-extrabold font-heading">{{$post->name}}</h2>
                     </a>
                     {{-- <x-forkawesome-play class="text-white border-4 font-medium border-white rounded-full p-6" /> --}}
-                    <a href="">
+                    <a href="{{ route('posts.show', $video) }}">
                         <img class="text-white h-20 w-auto" src="{{asset('images/go-play.svg')}}" alt="Agenda malvinas">
                     </a>
                 </div>
@@ -299,7 +299,7 @@
 
 
         {{-- sidebar publi --}}
-        <div class="hidden sm:flex items-center pt-3 w-1/5">
+        <div class="hidden sm:flex items-center pt-3 w-1/6">
 
             <a href="www.google.com">
                 <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">

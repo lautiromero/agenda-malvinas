@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -43,8 +44,24 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        //incrementamos las vistas
         $post->incrementReadCount();
 
-        return view('post.show', compact($post));
+        //seteamos los meta tags
+        meta()
+        ->set('title', $post->name)
+        ->set('og:type', 'article')
+        ->set('og:title', $post->name)
+        ->set('og:description', $post->extract)
+        ->set('og:image', Storage::url($post->image->url))
+        ->set('description', $post->extract);
+
+        //traemos los ultimos 3 post de la misma categoria
+        $otras_cat = Post::where('status', 2)
+        ->where('category_id', $post->category_id)
+        ->where('id', '!=', $post->id)
+        ->latest()->limit(3)->get();
+
+        return view('posts.show', compact('post', 'otras_cat'));
     }
 }

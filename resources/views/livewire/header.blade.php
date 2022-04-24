@@ -1,6 +1,6 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <nav x-data="{ open : false }">
-    <div class="mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="mx-auto px-2 sm:px-6 lg:px-14">
       <div class="relative flex items-center justify-between h-14 sm:h-auto sm:pt-4">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
@@ -152,7 +152,7 @@
     {{-- Category menu --}}
     <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-cyan-600">
       @foreach ($categories as $category)
-      <a href="" class="inline-block text-white py-3 uppercase text-sm tracking-wide">{{$category->name}}</a>
+      <a href="" class="inline-block text-white py-3 uppercase text-sm tracking-wide lg:px-3 hover:bg-cyan-400/20">{{$category->name}}</a>
       @endforeach
     </div>
 
