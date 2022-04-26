@@ -46,7 +46,7 @@
     {{-- Category menu --}}
     <div class="hidden sm:flex justify-around w-full">
         @foreach ($categories as $category)
-        <a href="" class="inline-block text-white py-3 uppercase text-sm tracking-wide">{{$category->name}}</a>
+        <a href="{{ route('category.show', $category) }}" class="inline-block text-white py-3 uppercase text-sm tracking-wide">{{$category->name}}</a>
         @endforeach
     </div>
 

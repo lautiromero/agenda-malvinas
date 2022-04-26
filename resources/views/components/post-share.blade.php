@@ -1,3 +1,12 @@
+<style>
+    .comentarios::after {
+        content: "({{ count($post->comments) }})";
+        margin: 0 auto;
+        font-size: 12px;
+        font-weight: bold;
+    }
+</style>
+
 <div class="flex md:inline-flex flex-row md:flex-col justify-between md:sticky top-10">
     <div class="grid grid-cols-3 md:grid-cols-1 gap-5 md:pb-5 md:border-b">
         <a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}" target="_blank"><x-akar-facebook-fill class="h-6 w-6 text-slate-700"/></a>
@@ -6,6 +15,6 @@
     </div>
     <div class="grid grid-cols-2 md:grid-cols-1 gap-5 md:pt-5">
         <a href="mailto:?subject={{rawurlencode($post->name)}}&body={{urlencode(url()->current())}}"><x-akar-envelope class="h-6 w-6 text-slate-700"/></a>
-        <a href="#"><x-akar-chat-dots class="h-6 w-6 text-slate-700"/></a>
+        <a href="#comentarios" class="comentarios text-center"><x-akar-chat-dots class="h-6 w-6 text-slate-700"/></a>
     </div>
 </div>

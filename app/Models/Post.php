@@ -38,4 +38,10 @@ class Post extends Model
         $this->reads++;
         return $this->save();
     }
+
+    //relacion uno a muchos
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

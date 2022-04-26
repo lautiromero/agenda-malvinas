@@ -18,7 +18,7 @@
 
                     <article class="hidden md:block md:col-span-2 md:row-span-2">
                         <p class="text-xs">
-                            <a href="#" class="uppercase">{{$post->category->name}}</a>
+                            <a href="{{ route('category.show', $post->category) }}" class="uppercase">{{$post->category->name}}</a>
                             <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                         </p> 
                         <a href="{{ route('posts.show', $post) }}">
@@ -27,7 +27,7 @@
                         <a href="{{ route('posts.show', $post) }}">
                             <h4 class="text-xl">{{$post->extract}}</h4>
                         </a>
-                        <a href="{{ route('posts.show', $post) }}" class="block h-96 w-full mt-5 bg-cover bg-center"
+                        <a href="{{ route('posts.show', $post) }}" class="block h-96 w-full mt-5 bg-cover bg-center hover:brightness-110"
                          style="background-image:url({{Storage::url($post->image->url)}})"></a>
                     </article>
 
@@ -95,10 +95,10 @@
                 @if ($loop->first)
 
                 <article class="md:col-span-2 md:row-span-3">
-                    <a href="{{ route('posts.show', $post) }}" class="block h-80 w-full bg-cover bg-center"
+                    <a href="{{ route('posts.show', $post) }}" class="block h-80 w-full bg-cover bg-center hover:brightness-110"
                     style="background-image:url({{Storage::url($post->image->url)}})"></a>
                     <p class="text-medium mt-5">
-                        <a href="#" class="uppercase">{{$post->category->name}}</a>
+                        <a href="{{ route('category.show', $post->category) }}" class="uppercase">{{$post->category->name}}</a>
                         <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
                     <a href="{{ route('posts.show', $post) }}">
@@ -114,7 +114,7 @@
                 <article class="bg-zinc-500 flex flex-col items-center justify-around text-center rounded-md md:row-span-3 py-5 px-3">
                     <div>
                         <p class="text-xs text-white mb-6">
-                            <a href="#" class="uppercase">{{$post->category->name}}</a>
+                            <a href="{{ route('category.show', $post->category) }}" class="uppercase">{{$post->category->name}}</a>
                             <span class="text-white"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                         </p> 
                         <a href="{{ route('posts.show', $post) }}">
@@ -134,7 +134,7 @@
                 <article class="bg-cyan-500 flex flex-col items-center justify-around text-center rounded-md space-y-3 py-4 px-2">
                   
                     <p class="text-xs text-white">
-                        <a href="#" class="uppercase">{{$post->category->name}}</a>
+                        <a href="{{ route('category.show', $post->category) }}" class="uppercase">{{$post->category->name}}</a>
                         <span class="text-white inline-block"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
                     <a href="{{ route('posts.show', $post) }}">
@@ -153,7 +153,7 @@
                 <article class="border-2 border-zinc-400 flex flex-col items-center justify-around text-center rounded-md space-y-3 py-4 px-2">
                   
                     <p class="text-xs text-zinc-500">
-                        <a href="#" class="uppercase">{{$post->category->name}}</a>
+                        <a href="{{ route('category.show', $post->category) }}" class="uppercase">{{$post->category->name}}</a>
                         <span class="text-zinc-500 inline-block"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p> 
                     <a href="{{ route('posts.show', $post) }}">
@@ -223,7 +223,7 @@
 
 
         {{-- sidebar publi --}}
-        <div class="hidden sm:block w-1/6">
+        <div class="hidden sm:block w-1/6 publi-background py-2">
 
             <a href="www.google.com">
                 <img class="block w-full h-auto sticky top-36" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
@@ -254,7 +254,7 @@
             </a>
             <p class="text-xs pt-2 w-full flex items-center">
                 <span class="text-cyan-600 text-6xl font-extrabold font-heading pr-2 pb-1">{{$contador++}}</span>
-                <a href="#" class="uppercase">{{$post->category->name}}</a>
+                <a href="{{ route('category.show', $post->category) }}" class="uppercase">{{$post->category->name}}</a>
                 <span class="text-gray-600"> - {{\Carbon\Carbon::parse($post->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
             </p> 
             <a href="{{ route('posts.show', $post) }}" class="w-full">
@@ -283,7 +283,7 @@
             style="background-image:url({{Storage::url($video->image->url)}})">
                 <div class="bg-sky-500/90 h-full sm:w-2/5 p-3 sm:p-6 flex justify-center items-center flex-col text-center">
                     <p class="text-xs pt-2 flex items-center">
-                        <a href="#" class="uppercase text-white">{{$video->category->name}}</a>
+                        <a href="{{ route('category.show', $video->category) }}" class="uppercase text-white">{{$video->category->name}}</a>
                         <span class="text-white"> - {{\Carbon\Carbon::parse($video->created_at)->translatedFormat('j \d\e F \d\e Y')}}</span>
                     </p>
                     <a href="{{ route('posts.show', $video) }}" class="w-full pb-6 pt-4">
@@ -299,7 +299,7 @@
 
 
         {{-- sidebar publi --}}
-        <div class="hidden sm:flex items-center pt-3 w-1/6">
+        <div class="hidden sm:flex items-center pt-3 w-1/6 publi-background">
 
             <a href="www.google.com">
                 <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">

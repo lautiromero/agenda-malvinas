@@ -2,11 +2,25 @@
 
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 //posts
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('noticia/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::get('buscar', [PostController::class, 'search'])->name('posts.search');
+
+//category
+Route::get('categoria/{category}', [CategoryController::class, 'show'])->name('category.show');
+
+//tag
+Route::get('tag/{tag}', [TagController::class, 'show'])->name('tag.show');
+
+
+//add comment
+Route::post('comment/store', [CommentController::class, 'store'])->name('comment.add');
 
 //vistas
 Route::view('donar', 'donar')->name('donar');
