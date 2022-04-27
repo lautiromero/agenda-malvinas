@@ -10,10 +10,12 @@
         "codeat3/blade-forkawesome": "^1.8",
         "f9webltd/laravel-meta": "^1.7",
         "guzzlehttp/guzzle": "^7.4",
+        "jeroennoten/laravel-adminlte": "^3.8",
         "laravel/framework": "^9.2",
         "laravel/jetstream": "^2.6",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "laravelcollective/html": "^6.3",
         "livewire/livewire": "^2.5",
         "nesbot/carbon": "^2.57"
     },

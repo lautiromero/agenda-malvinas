@@ -116,7 +116,7 @@
 
                     <div x-show="open" x-on:click.away="open=false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-cyan-500 ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Panel</a>
+                        <a href="{{ route('admin.home') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Panel</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Mi perfil</a>
 
                         <form method="POST" action="{{ route('logout') }}" x-data>
@@ -153,9 +153,10 @@
         <a href="{{ route('donar') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Donación</a>
         
         @auth
+        <a href="{{ route('admin.home') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Panel</a>
         <form method="POST" action="{{ route('logout') }}" x-data>
           @csrf
-          <a href="{{ route('logout') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Ingresar</a>
+          <a href="{{ route('logout') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Salir</a>
         </form>
         @else
         <a href="{{ route('login') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Ingresar</a>
