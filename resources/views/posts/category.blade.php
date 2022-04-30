@@ -47,7 +47,7 @@
                     <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
                 </a>
             </div>
-            @if (count($more) > 0)
+            @if ($more->count())
                 {{-- title mas/more noticias --}}
                 <div class="py-3 pt-5 border-b border-gray-300">
                     <h2 class="text-3xl font-extrabold font-heading">Más de <strong class="uppercase text-2xl text-cyan-500 pl-2">{{ $name }}</strong></h2>

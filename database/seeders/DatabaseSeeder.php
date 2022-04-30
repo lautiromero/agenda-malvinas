@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('ads');
         Storage::makeDirectory('ads');
 
+        $this->call(RoleSeeder::class);
+
         $this->call(UserSeeder::class);
         $this->call(CategoriesSeeder::class);
         // Tag::factory(8)->create();

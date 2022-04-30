@@ -45,6 +45,8 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $this->authorize('published', $post);
+        
         //incrementamos las vistas
         $post->incrementReadCount();
 

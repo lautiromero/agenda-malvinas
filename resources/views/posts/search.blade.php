@@ -13,7 +13,7 @@
             {{-- content --}}
             <div class="py-6">
 
-            @if (count($posts) > 0)
+            @if ($posts->count())
                 
                 <h2 class="text-xl md:text-2xl font-bold py-4 border-b border-gray-200">Mostrando resultados de: "{{$texto}}"</h2>
             

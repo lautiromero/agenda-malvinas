@@ -227,8 +227,6 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
             'topnav_right' => true,
         ],
         [
@@ -253,52 +251,32 @@ return [
         ],
         ['header' => 'ADMINISTRADOR'],
         [
+            'text'    => 'Noticias',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Lista de Noticias',
+                    'route'  => 'admin.posts.index',
+                    'icon'    => 'fas fa-fw fa-clipboard-list',
+                ],
+                [
+                    'text' => 'Crear Noticia',
+                    'route'  => 'admin.posts.create',
+                    'icon'    => 'fas fa-fw fa-plus',
+                ],
+            ],
+        ],
+        [
             'text' => 'Categorías',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
+            'active' => ['admin/categories/*']
         ],
         [
             'text' => 'Tags',
             'route'  => 'admin.tags.index',
             'icon' => 'far fa-fw fa-bookmark',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'active' => ['admin/tags/*']
         ],
         ['header' => 'labels'],
         [
@@ -470,5 +448,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

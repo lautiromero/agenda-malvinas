@@ -1,13 +1,5 @@
-@extends('adminlte::page')
-
-@section('title', 'Tags - Agenda Malvinas')
-
-@section('content_header')
-    <h1>Lista de tags</h1>
-@stop
-
-@section('content')
-@if (session('info'))
+<div>
+    @if (session('info'))
     <div class="alert alert-success">
         <strong>{{ session('info') }}</strong>
     </div>
@@ -16,9 +8,11 @@
     <div class="card">
 
         <div class="card-header">
-            <a href="{{ route('admin.tags.create') }}" class="btn btn-secondary">Agregar etiqueta</a>
+            <input wire:model="search" class="form-control" placeholder="Buscar noticia">
         </div>
 
+        @if ($posts->count())
+        
         <dic class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -29,15 +23,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($tags as $tag)
+                    @foreach ($posts as $post)
                         <tr>
-                            <td>{{ $tag->id }}</td>
-                            <td>{{ $tag->name }}</td>
+                            <td>{{ $post->id }}</td>
+                            <td>{{ $post->name }}</td>
                             <td width="10px">
-                                <a href="{{ route('admin.tags.edit', $tag) }}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                             <td width="10px">
-                                <form action="{{ route('admin.tags.destroy', $tag) }}" method="POST">
+                                <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm delete">Eliminar</button>
@@ -48,13 +42,28 @@
                 </tbody>
             </table>
         </dic>
-    </div>
-@stop
 
-@section('js')
+        <div class="card-footer">
+            {{ $posts->links() }}
+        </div>
+
+        @else
+
+        <div class="card-body">
+            <strong>No hay registros que coincidan con: {{$search}}</strong>
+        </div>
+
+        @endif
+        
+
+    </div>
+
+    @section('js')
     <script>
         document.onsubmit=function(){
-           return confirm('Está seguro que desea eliminar esta etiqueta? La informacion no podrá recuperarse.');
+           return confirm('Está seguro que desea eliminar esta noticia? La informacion no podrá recuperarse.');
         }
     </script>
-@stop
+    @stop
+
+</div>

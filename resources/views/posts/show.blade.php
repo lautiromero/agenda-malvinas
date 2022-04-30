@@ -46,7 +46,7 @@
                 <div class="w-full md:w-11/12 pt-6 md:pt-0">
 
                     <p class="subhead">
-                    {{ $post->body }}
+                    {!! $post->body !!}
                     </p>
 
                     <h4 class="text-lg py-6">Por <strong>{{$post->user->name}}</strong></h4>

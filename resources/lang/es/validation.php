@@ -147,8 +147,12 @@ return [
     */
 
     'attributes' => [
-        'name' => 'nombre',
-        'comment' => 'mensaje'
+        'name' => 'nombre o título',
+        'comment' => 'mensaje',
+        'extract' => 'descripción',
+        'body' => 'cuerpo de noticia',
+        'img_desc' => 'descripción de imagen',
+        'file' => 'imagen'
     ]
 
 ];
