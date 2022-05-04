@@ -16,6 +16,11 @@ class CategoriesSeeder extends Seeder
     public function run()
     {
         Category::create([
+            'name' => 'Sin categoría',
+            'slug' => 'sin-categoria'
+        ]);
+
+        Category::create([
             'name' => 'Internacionales',
             'slug' => 'internacionales'
         ]);

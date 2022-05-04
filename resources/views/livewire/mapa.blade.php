@@ -23,9 +23,11 @@
                 <h4 class="font-bold text-gray-600">Categorías</h4>
             </li>
             @foreach ($categories as $category)
-            <li class="pb-3">
-                <a href="#" class="">{{$category->name}}</a>
-            </li>
+                @if (!$loop->first)
+                <li class="pb-3">
+                    <a href="{{ route('category.show', $category) }}" class="">{{$category->name}}</a>
+                </li>
+                @endif
             @endforeach 
         </ul>
         <ul class="text-cyan-600">

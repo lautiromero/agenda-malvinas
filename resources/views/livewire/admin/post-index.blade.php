@@ -19,7 +19,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th colspan="2"></th>
+                        <th>Estado</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +28,16 @@
                         <tr>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->name }}</td>
+                            <td>
+                                @if ($post->status == 1)
+                                    Borrador
+                                @else
+                                    Publicada
+                                @endif
+                            </td>
+                            <td width="10px">
+                                <a href="{{ route('posts.show', $post) }}" target="_blank" class="btn btn-primary btn-sm">Ver</a>
+                            </td>
                             <td width="10px">
                                 <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-primary btn-sm">Editar</a>
                             </td>

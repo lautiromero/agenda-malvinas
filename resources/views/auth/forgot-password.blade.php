@@ -1,11 +1,13 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="{{ route('posts.index') }}">
+                <img class="block h-12 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
+            </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('¿Olvidaste tu contraseña? Te enviaremos un mail para que puedas elegir una nueva.') }}
         </div>
 
         @if (session('status'))
@@ -26,7 +28,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Enviar') }}
                 </x-jet-button>
             </div>
         </form>

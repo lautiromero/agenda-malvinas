@@ -22,7 +22,11 @@ class AdFactory extends Factory
         return [
             'name' => $name,
             'link' => 'https://'.$this->faker->word(20).'.com',
-            'type' => $this->faker->word(7)
+            'type' => $this->faker->randomElement([
+                'vertical',
+                'horizontal',
+                'nota-home'
+            ]),
         ];
     }
 }

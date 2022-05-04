@@ -3,12 +3,11 @@
 
         {{-- section --}}
         <div class="w-full sm:w-5/6">
-            {{-- banner home --}}
+            {{-- banner horizontal --}}
             <div class="w-full">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
+
 
             {{-- content --}}
             <div class="py-6">
@@ -55,9 +54,7 @@
         {{-- sidebar publi --}}
         <div class="hidden sm:block w-1/6 publi-background py-2">
 
-            <a href="www.google.com">
-                <img class="block w-full h-auto sticky top-36" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
-            </a>
+            @livewire('ads.vertical')
 
         </div>
         

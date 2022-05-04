@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-use App\Models\Tag;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
@@ -29,6 +27,6 @@ class DatabaseSeeder extends Seeder
         // Tag::factory(8)->create();
         $this->call(TagSeeder::class);
         $this->call(PostSeeder::class);
-        //$this->call(AdSeeder::class);
+        $this->call(AdSeeder::class);
     }
 }

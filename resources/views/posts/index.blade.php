@@ -6,9 +6,7 @@
         <div class="w-full sm:w-5/6">
             {{-- banner home --}}
             <div class="w-full">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
 
             {{-- content --}}
@@ -43,9 +41,7 @@
 
             {{-- banner home --}}
             <div class="w-full">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
 
             {{-- divider importante --}}
@@ -74,9 +70,15 @@
 
                 @endforeach
 
-                <div class="w-full h-80 bg-sky-500"></div>
-                <div class="w-full h-80 bg-sky-500"></div>
-                <div class="w-full h-80 bg-sky-500"></div>
+                <div class="w-full h-80 publi-background p-2">
+                    @livewire('ads.home')
+                </div>
+                <div class="w-full h-80 publi-background p-2">
+                    @livewire('ads.home')
+                </div>
+                <div class="w-full h-80 publi-background p-2">
+                    @livewire('ads.home')
+                </div>
             </div>
 
             {{-- title opinion --}}
@@ -173,9 +175,7 @@
 
             {{-- banner home --}}
             <div class="w-full py-5">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
 
             {{-- divider importante --}}
@@ -190,9 +190,7 @@
 
             {{-- banner home --}}
             <div class="w-full py-5">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
 
             {{-- title mas/more noticias --}}
@@ -211,9 +209,15 @@
 
                 @endforeach
 
-                <div class="w-full h-80 bg-sky-500"></div>
-                <div class="w-full h-80 bg-sky-500"></div>
-                <div class="w-full h-80 bg-sky-500"></div>
+                <div class="w-full h-80 publi-background p-2">
+                    @livewire('ads.home')
+                </div>
+                <div class="w-full h-80 publi-background p-2">
+                    @livewire('ads.home')
+                </div>
+                <div class="w-full h-80 publi-background p-2">
+                    @livewire('ads.home')
+                </div>
             </div>
 
 
@@ -225,9 +229,7 @@
         {{-- sidebar publi --}}
         <div class="hidden sm:block w-1/6 publi-background py-2">
 
-            <a href="www.google.com">
-                <img class="block w-full h-auto sticky top-36" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
-            </a>
+            @livewire('ads.vertical')
 
         </div>
         
@@ -299,11 +301,9 @@
 
 
         {{-- sidebar publi --}}
-        <div class="hidden sm:flex items-center pt-3 w-1/6 publi-background">
+        <div class="hidden sm:flex items-center justify-center py-3 w-1/6 publi-background">
 
-            <a href="www.google.com">
-                <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
-            </a>
+            @livewire('ads.vertical')
 
         </div>
     </div>

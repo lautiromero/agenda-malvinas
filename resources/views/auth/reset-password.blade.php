@@ -1,7 +1,9 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="{{ route('posts.index') }}">
+                <img class="block h-12 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
+            </a>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -28,7 +30,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-jet-button>
-                    {{ __('Reset Password') }}
+                    {{ __('Restaurar contraseña') }}
                 </x-jet-button>
             </div>
         </form>

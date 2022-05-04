@@ -4,11 +4,9 @@
         {{-- section --}}
 
         <div class="w-full sm:w-5/6">
-            {{-- banner home --}}
+            {{-- banner horizontal --}}
             <div class="w-full">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
 
             {{-- content --}}
@@ -41,11 +39,9 @@
                 @endforeach
             </div>
 
-            {{-- banner home --}}
+            {{-- banner horizontal --}}
             <div class="w-full">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
             @if ($more->count())
                 {{-- title mas/more noticias --}}
@@ -74,9 +70,7 @@
 
             {{-- publi --}}
             <div class="publi-background py-5">
-            <a href="www.google.com">
-                <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
-            </a>
+                @livewire('ads.vertical')
             </div>
 
             {{-- most viewed cat --}}
@@ -105,11 +99,9 @@
                 </div>
             </div>
 
-            {{-- publi --}}
+            {{-- publi  vertical--}}
             <div class="publi-background py-5">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
-                </a>
+                @livewire('ads.vertical')
             </div>
 
         </div>

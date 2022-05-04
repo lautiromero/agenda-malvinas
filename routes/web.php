@@ -32,6 +32,6 @@ Route::get('mapa-del-sitio', App\Http\Livewire\Mapa::class)->name('mapa');
 Route::get('contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');

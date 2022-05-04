@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -248,6 +248,7 @@ return [
             'text'        => 'Panel',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can' => 'admin.home'
         ],
         ['header' => 'ADMINISTRADOR'],
         [
@@ -258,11 +259,13 @@ return [
                     'text' => 'Lista de Noticias',
                     'route'  => 'admin.posts.index',
                     'icon'    => 'fas fa-fw fa-clipboard-list',
+                    'can' => 'admin.posts.index'
                 ],
                 [
                     'text' => 'Crear Noticia',
                     'route'  => 'admin.posts.create',
                     'icon'    => 'fas fa-fw fa-plus',
+                    'can' => 'admin.posts.create'
                 ],
             ],
         ],
@@ -270,30 +273,31 @@ return [
             'text' => 'Categorías',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
-            'active' => ['admin/categories/*']
+            'active' => ['admin/categories/*'],
+            'can' => 'admin.categories.index'
         ],
         [
             'text' => 'Tags',
             'route'  => 'admin.tags.index',
             'icon' => 'far fa-fw fa-bookmark',
-            'active' => ['admin/tags/*']
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'active' => ['admin/tags/*'],
+            'can' => 'admin.tags.index'
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Usuarios',
+            'route'  => 'admin.users.index',
+            'icon' => 'fas fa-fw fa-users',
+            'active' => ['admin/users/*'],
+            'can' => 'admin.users.index'
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Publicidades',
+            'route'  => 'admin.ads.index',
+            'icon' => 'fas fa-fw fa-images',
+            'active' => ['admin/ads/*'],
+            'can' => 'admin.ads.index'
         ],
+
     ],
 
     /*

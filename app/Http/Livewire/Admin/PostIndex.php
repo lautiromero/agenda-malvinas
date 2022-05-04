@@ -24,6 +24,7 @@ class PostIndex extends Component
 
         //traemos todos los posts
         $posts = Post::where('name', 'LIKE', '%' . $this->search . '%')
+                    ->where('user_id', auth()->user()->id)
                     ->orderBy('id', 'desc')
                     ->paginate();
 

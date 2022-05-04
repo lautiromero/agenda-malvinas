@@ -1,11 +1,13 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="{{ route('posts.index') }}">
+                <img class="block h-12 w-auto" src="{{asset('images/logo.svg')}}" alt="Agenda malvinas">
+            </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
+            {{ __('Confirma tu contraseña para continuar.') }}
         </div>
 
         <x-jet-validation-errors class="mb-4" />

@@ -116,8 +116,11 @@
 
                     <div x-show="open" x-on:click.away="open=false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-cyan-500 ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a href="{{ route('admin.home') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Panel</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Mi perfil</a>
+                        @can('admin.home')
+                          <a href="{{ route('admin.home') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Panel</a>
+                        @endcan
+                        
+                        <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Mi perfil</a>
 
                         <form method="POST" action="{{ route('logout') }}" x-data>
                             @csrf
@@ -153,19 +156,23 @@
         <a href="{{ route('donar') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Donación</a>
         
         @auth
-        <a href="{{ route('admin.home') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Panel</a>
-        <form method="POST" action="{{ route('logout') }}" x-data>
-          @csrf
-          <a href="{{ route('logout') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Salir</a>
-        </form>
+          @can('admin.home')
+            <a href="{{ route('admin.home') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Panel</a>
+          @endcan
+            <form method="POST" action="{{ route('logout') }}" x-data>
+            @csrf
+            <a href="{{ route('logout') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Salir</a>
+          </form>
         @else
-        <a href="{{ route('login') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Ingresar</a>
+          <a href="{{ route('login') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Ingresar</a>
         @endauth
       </div>
       <div class="px-2 pt-3 pb-3 space-y-1">
         
       @foreach ($categories as $category)
-      <a href="{{ route('category.show', $category) }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">{{$category->name}}</a>
+        @if (!$loop->first)
+        <a href="{{ route('category.show', $category) }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">{{$category->name}}</a>
+        @endif
       @endforeach
 
       </div>
@@ -192,7 +199,9 @@
     {{-- Category menu --}}
     <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-cyan-600">
       @foreach ($categories as $category)
-      <a href="{{ route('category.show', $category) }}" class="inline-block text-white py-3 uppercase text-sm tracking-wide lg:px-3 hover:bg-cyan-400/20">{{$category->name}}</a>
+        @if (!$loop->first)
+        <a href="{{ route('category.show', $category) }}" class="inline-block text-white py-3 uppercase text-sm tracking-wide lg:px-3 hover:bg-cyan-400/20">{{$category->name}}</a>
+        @endif
       @endforeach
     </div>
 

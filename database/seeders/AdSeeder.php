@@ -17,12 +17,31 @@ class AdSeeder extends Seeder
      */
     public function run()
     {
-        $ads = Ad::factory(10)->create();
+        $ads = Ad::factory(15)->create();
         foreach ($ads as $ad) {
-            Image::factory(1)->create([
-                'imageable_id' => $ad->id,
-                'imageable_type' => Ad::class
-            ]);
+
+            switch ($ad->type) {
+                case 'horizontal':
+                    Image::factory(1)->typeHorizontal()->create([
+                        'imageable_id' => $ad->id,
+                        'imageable_type' => Ad::class
+                    ]);
+                    break;
+                
+                case 'vertical':
+                    Image::factory(1)->typeVertical()->create([
+                        'imageable_id' => $ad->id,
+                        'imageable_type' => Ad::class
+                    ]);
+                    break;
+
+                default:
+                    Image::factory(1)->typeHome()->create([
+                        'imageable_id' => $ad->id,
+                        'imageable_type' => Ad::class
+                    ]);
+                    break;
+            }
         }
 
     }

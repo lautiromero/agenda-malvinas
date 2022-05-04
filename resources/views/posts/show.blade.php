@@ -1,9 +1,7 @@
 <x-app-layout>
     {{-- banner horizontal --}}
     <div class="custom-container publi-background">
-        <a href="www.google.com">
-            <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-        </a>
+        @livewire('ads.horizontal')
     </div>
 
     {{-- breadcrumb & title container --}}
@@ -81,9 +79,7 @@
 
                     {{-- banner horizontal --}}
                     <div class="py-8">
-                        <a href="www.google.com">
-                            <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                        </a>
+                        @livewire('ads.horizontal')
                     </div>
                 </div>
             </div>
@@ -102,9 +98,7 @@
 
             {{-- banner horizontal --}}
             <div class="py-8">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-home.jpg')}}" alt="">
-                </a>
+                @livewire('ads.horizontal')
             </div>
 
             <div class="pt-3 border-b border-gray-300">
@@ -141,6 +135,11 @@
                     <button class="px-3 py-2 text-sm text-white bg-cyan-600 rounded" type="submit">Comentar</button>
                 </form>
             </div>
+            @else
+            <p class="pt-4 text-gray-700">
+                <a href="{{ route('login') }}" class="font-bold">Inicia sesión</a> o 
+                <a href="{{ route('register') }}" class="font-bold">registrate</a> para comentar.
+            </p>
             @endauth
         </div>
 
@@ -148,9 +147,7 @@
         <div class="hidden sm:block w-1/5">
             {{-- publi --}}
             <div class="publi-background py-5">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
-                </a>
+                @livewire('ads.vertical')
             </div>
 
             {{-- most viewed cat --}}
@@ -179,11 +176,9 @@
                 </div>
             </div>
 
-            {{-- publi --}}
+            {{-- publi sidebar --}}
             <div class="publi-background py-5">
-                <a href="www.google.com">
-                    <img class="block w-full h-auto" src="{{asset('images/banner-sidebar.jpg')}}" alt="">
-                </a>
+                @livewire('ads.vertical')
             </div>
         </div>
 

@@ -69,7 +69,7 @@
 
                 reader.readAsDataURL(file);
 
-                });
+            });
 
         });
     

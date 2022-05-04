@@ -26,7 +26,7 @@
                             @isset ($post->image)
                             
                             <img id="picture" 
-                            src="{{ Storage::url($post->image->url) }}" alt="">
+                            src="{{ Storage::url($post->image->url) }}">
 
                             @else
                             
@@ -78,6 +78,20 @@
                     </label>
 
                     @endforeach
+                </div>
+
+                <div class="form-group">
+                    <p class="font-weight-bold">Estado</p>
+
+                    <label class="mr-1">
+                        {!! Form::radio('status', 1, true) !!}
+                        Borrador
+                    </label>
+
+                    <label>
+                        {!! Form::radio('status', 2, false) !!}
+                        Publicado
+                    </label>
                 </div>
 
                 <div class="form-group">
