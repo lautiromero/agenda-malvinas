@@ -71,6 +71,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('wp-content') => storage_path('app/wp-content'),
+        public_path('storage/wp-content') => storage_path('app/wp-content'),
     ],
 
 ];

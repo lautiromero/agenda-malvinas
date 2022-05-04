@@ -85,7 +85,7 @@ class PostSeeder extends Seeder
                 DB::connection('mysql')->table('images')->insert([
                     'imageable_id' => $image->post_parent,
                     'imageable_type' => Post::class,
-                    'url' => 'posts/' . $images[$image->ID]
+                    'url' => 'wp-content/uploads/' . $images[$image->ID]
                 ]);
             }
         }
