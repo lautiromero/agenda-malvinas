@@ -835,8 +835,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 2.5rem;
 }.-mt-px{
   margin-top: -1px;
-}.mt-14{
-  margin-top: 3.5rem;
 }.block{
   display: block;
 }.inline-block{
@@ -2293,6 +2291,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}.post-body h1 {
+    font-size: 2em;
+    font-weight: bolder;
+    font-family: 'Alegraya sans', sans-serif;
+}.post-body h2 {
+    font-size: 1.5em;
+    font-weight: bolder;
+}.post-body h3 {
+    font-size: 1.17em;
+    font-weight: bolder;
+}.post-body h4 {
+    font-size: 1em;
+    font-weight: bolder;
 }.divider:after, .divider:before {
     display: block;
     content: '';

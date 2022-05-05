@@ -13,7 +13,7 @@ class WeatherComponent extends Component
 
     protected $cities = array(
         //nombre para mostrar, latitud, longitud
-        array("Tierra del fuego", -54.8, -68.3),
+        array("Ushuaia", -54.8, -68.3),
         array("Islas Malvinas", -51.7, -57.85),
         array("Antártida", -77.6, 168.2)
     );

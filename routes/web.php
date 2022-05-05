@@ -13,6 +13,9 @@ Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('noticia/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::get('buscar', [PostController::class, 'search'])->name('posts.search');
 
+Route::get('{age}/{month}/{day}/{id}', [PostController::class, 'showById'])
+        ->where(['age' => '[0-9]+','month' => '[0-9]+','day' => '[0-9]+']);
+
 //category
 Route::get('categoria/{category}', [CategoryController::class, 'show'])->name('category.show');
 

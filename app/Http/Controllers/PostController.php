@@ -81,6 +81,44 @@ class PostController extends Controller
         return view('posts.show', compact('post', 'otras_cat', 'vieweds', 'comments', 'cat_vieweds'));
     }
 
+    public function showById($id)
+    {
+        $post = Post::find($id);
+        //incrementamos las vistas
+        $post->incrementReadCount();
+
+        //seteamos los meta tags
+        meta()
+        ->set('title', $post->name)
+        ->set('og:type', 'article')
+        ->set('og:title', $post->name)
+        ->set('og:description', $post->extract)
+        ->set('og:image', Storage::url($post->image->url))
+        ->set('description', $post->extract);
+
+        //traemos los ultimos 3 post de la misma categoria
+        $otras_cat = Post::where('status', 2)
+        ->where('category_id', $post->category_id)
+        ->where('id', '!=', $post->id)
+        ->latest()->limit(3)->get();
+
+        //9 Posts mas vistos de los ultimos 30 dias
+        $vieweds = Post::where('status', 2)
+        ->where('created_at', '>', now()->subDays(30)->endOfDay())
+        ->orderBy('reads', 'desc')->limit(9)->get();
+
+        //Mas leidas de la misma categorìa
+        $cat_vieweds = Post::where('status', 2)
+        ->where('created_at', '>', now()->subDays(30)->endOfDay())
+        ->where('category_id', $post->category_id)
+        ->orderBy('reads', 'desc')->limit(4)->get();
+        
+        //traemos los comentarios que pertenecen a este post
+        $comments = Comment::where('post_id', $post->id)->latest()->get();
+
+        return view('posts.show', compact('post', 'otras_cat', 'vieweds', 'comments', 'cat_vieweds'));
+    }
+
     public function search(Request $request)
     {
         $texto = trim($request->get('texto'));
