@@ -1,6 +1,6 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <nav x-data="{ open : false, search : false }">
-    <div class="mx-auto px-2 sm:px-6 lg:px-14">
+    <div class="mx-auto px-2 sm:px-6 lg:px-14 z-50 header-navigation" id="header">
       <div class="relative flex items-center justify-between h-14 sm:h-auto sm:pt-4">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
@@ -146,8 +146,10 @@
       </div>
     </div>
 
+    {{-- menu mobile fantasma --}}
+    <div class="sm:hidden h-14"></div>
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden bg-cyan-500 uppercase divide-y divide-cyan-300 shadow" id="mobile-menu" x-show="open" x-on:click.away="open=false">
+    <div class="sm:hidden bg-cyan-500 uppercase divide-y divide-cyan-300 shadow fixed" id="mobile-menu" x-show="open" x-on:click.away="open=false">
       <div class="px-2 pt-3 pb-3 space-y-1">
         {{-- <a href="#" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a> --}}
 
@@ -197,7 +199,7 @@
     </div>
 
     {{-- Category menu --}}
-    <div class="hidden sm:flex justify-around px-6 w-full bg-cyan-500 border-t border-cyan-600">
+    <div class="hidden sm:flex justify-around px-6 w-full mt-[8.25rem] bg-cyan-500 {{-- border-t border-cyan-600 --}}">
       @foreach ($categories as $category)
         @if (!$loop->first)
         <a href="{{ route('category.show', $category) }}" class="inline-block text-white py-3 uppercase text-sm tracking-wide lg:px-3 hover:bg-cyan-400/20">{{$category->name}}</a>
@@ -205,4 +207,24 @@
       @endforeach
     </div>
 
+    <script>
+      var new_scroll_position = 0;
+      var last_scroll_position;
+      var header = document.getElementById("header");
+      window.addEventListener('scroll', function(e) {
+        last_scroll_position = window.scrollY;
+        // Scrolling down
+        if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+          // header.removeClass('slideDown').addClass('slideUp');
+          header.classList.remove("slideDown");
+          header.classList.add("slideUp");
+        // Scrolling up
+        } else if (new_scroll_position > last_scroll_position) {
+          // header.removeClass('slideUp').addClass('slideDown');
+          header.classList.remove("slideUp");
+          header.classList.add("slideDown");
+        }
+        new_scroll_position = last_scroll_position;
+      });
+    </script>
 </nav>
