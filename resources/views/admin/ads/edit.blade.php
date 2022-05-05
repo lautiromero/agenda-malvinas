@@ -39,10 +39,16 @@
 
 @section('js')
     <script>
+
         $(document).ready( function() {
         //imagen replace
 
             $('#image').change(function(e){
+
+                if(this.files[0].size > 2097152){
+                    alert("La imagen es demasiado pesada.");
+                    this.value = "";
+                };
 
                 let file= e.target.files[0];
 

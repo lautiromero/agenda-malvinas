@@ -57,6 +57,11 @@
 
             $('#image').change(function(e){
 
+                if(this.files[0].size > 3597152){
+                    alert("La imagen es demasiado pesada.");
+                    this.value = "";
+                };
+
                 let file= e.target.files[0];
 
                 let reader= new FileReader();
