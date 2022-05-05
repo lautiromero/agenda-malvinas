@@ -58,6 +58,9 @@
 
             });
 
+ 
+        $('select[readonly="readonly"] option:not(:selected)').attr('disabled',true);
+
         });
     </script>
 

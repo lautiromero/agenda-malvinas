@@ -3,9 +3,6 @@
 @section('title', 'Administrador - Agenda Malvinas')
 
 @section('content_header')
-    @can('admin.ads.create')
-        <a href="{{ route('admin.ads.create') }}" class="btn btn-secondary btn-sm float-right">Agregar publicidad</a>
-    @endcan
         <h1>Lista de publicidades</h1>
 @stop
 
@@ -30,7 +27,7 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Tipo</th>
-                        <th colspan="2"></th>
+                        <th colspan="1"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,27 +41,10 @@
                                 <a href="{{ route('admin.ads.edit', $ad) }}" class="btn btn-primary btn-sm">Editar</a>
                                 @endcan
                             </td>
-                            <td width="10px">
-                                @can('admin.ads.destroy')
-                                <form action="{{ route('admin.ads.destroy', $ad) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm delete">Eliminar</button>
-                                </form>
-                                @endcan
-                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </dic>
     </div>
-@stop
-
-@section('js')
-    <script>
-        document.onsubmit=function(){
-           return confirm('Está seguro que desea eliminar esta publicidad? La informacion no podrá recuperarse.');
-        }
-    </script>
 @stop

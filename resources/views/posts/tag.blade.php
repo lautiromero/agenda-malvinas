@@ -6,7 +6,7 @@
         <div class="w-full sm:w-5/6">
             {{-- banner horizontal --}}
             <div class="w-full">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="1">
             </div>
 
             {{-- content --}}
@@ -41,7 +41,7 @@
 
             {{-- banner horizontal --}}
             <div class="w-full">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="2">
             </div>
             @if ($more->count())
                 {{-- title mas/more noticias --}}
@@ -70,7 +70,7 @@
 
             {{-- publi --}}
             <div class="publi-background py-5">
-                @livewire('ads.vertical')
+                <livewire:ads.vertical :orden="11">
             </div>
 
             {{-- most viewed cat --}}
@@ -101,7 +101,7 @@
 
             {{-- publi  vertical--}}
             <div class="publi-background py-5">
-                @livewire('ads.vertical')
+                <livewire:ads.vertical :orden="13">
             </div>
 
         </div>

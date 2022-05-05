@@ -7,10 +7,12 @@ use App\Models\Ad;
 
 class Home extends Component
 {
-    public function render()
-    {
-        $ad = Ad::where('type', 'nota-home')->inRandomOrder()->first();
+    public $ad;
 
-        return view('livewire.ads.horizontal', compact('ad'));
+    public function mount($orden)
+    {
+        $this->ad = Ad::where('id', $orden)->first();
+
+        return view('livewire.ads.home', ['ad' => $this->ad]);
     }
 }

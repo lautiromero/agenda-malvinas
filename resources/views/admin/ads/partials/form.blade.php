@@ -12,7 +12,7 @@
     {!! Form::select('type', array('horizontal' => 'Horizontal',
                                 'vertical' => 'Vertical',
                                 'nota-home' => 'Nota Home'),
-                                 null, ['class' => 'form-control']) !!}
+                                 null, ['class' => 'form-control', 'readonly']) !!}
                     
     @error('type')
         <small class="text-danger">{{ $message }}</small>

@@ -8,10 +8,12 @@ use App\Models\Ad;
 
 class Horizontal extends Component
 {
-    public function render()
-    {
-        $ad = Ad::where('type', 'horizontal')->inRandomOrder()->first();
+    public $ad;
 
-        return view('livewire.ads.horizontal', compact('ad'));
+    public function mount($orden)
+    {
+        $this->ad = Ad::where('id', $orden)->first();
+
+        return view('livewire.ads.horizontal', ['ad' => $this->ad]);
     }
 }

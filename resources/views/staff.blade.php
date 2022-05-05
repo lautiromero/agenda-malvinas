@@ -22,7 +22,9 @@
                     border-cyan-500 font-extrabold font-heading uppercase">Director</div>
                 </div>
                 <ul class="px-1">
-                    <li class="text-lg md:text-xl text-slate-700">Daniel Guzmán</li>
+                    @foreach ($director as $item)
+                    <li class="text-lg md:text-xl text-slate-700">{{ $item->name }}</li>
+                    @endforeach
                 </ul>
             </div>
             <div class="pt-6 md:pt-0">
@@ -31,13 +33,9 @@
                     border-cyan-500 font-extrabold font-heading uppercase">Editores</div>
                 </div>
                 <ul class="px-1">
-                    <li class="text-lg md:text-xl text-slate-700">Mario Volpe</li>
-                </ul>
-                <ul class="px-1">
-                    <li class="text-lg md:text-xl text-slate-700">Jerónimo Guerrero Iraola</li>
-                </ul>
-                <ul class="px-1">
-                    <li class="text-lg md:text-xl text-slate-700">Jorge Gómez</li>
+                    @foreach ($editor as $item)
+                    <li class="text-lg md:text-xl text-slate-700">{{ $item->name }}</li>
+                    @endforeach
                 </ul>
             </div>
             <div class="pt-6 md:pt-0">
@@ -46,7 +44,9 @@
                     border-cyan-500 font-extrabold font-heading uppercase">Relaciones Inst.</div>
                 </div>
                 <ul class="px-1">
-                    <li class="text-lg md:text-xl text-slate-700">Lucia Gala García Valls</li>
+                    @foreach ($relaciones as $item)
+                    <li class="text-lg md:text-xl text-slate-700">{{ $item->name }}</li>
+                    @endforeach
                 </ul>
             </div>
             <div class="pt-6 md:pt-0">
@@ -55,7 +55,9 @@
                     border-cyan-500 font-extrabold font-heading uppercase">Redes sociales</div>
                 </div>
                 <ul class="px-1">
-                    <li class="text-lg md:text-xl text-slate-700">Marco Cavignac</li>
+                    @foreach ($redes as $item)
+                    <li class="text-lg md:text-xl text-slate-700">{{ $item->name }}</li>
+                    @endforeach
                 </ul>
             </div>
             <div class="pt-6 md:pt-0">
@@ -64,7 +66,9 @@
                     border-cyan-500 font-extrabold font-heading uppercase">Diseño & desarrollo</div>
                 </div>
                 <ul class="px-1">
-                    <li class="text-lg md:text-xl text-slate-700">Correa Marco Federico</li>
+                    @foreach ($desarrollo as $item)
+                    <li class="text-lg md:text-xl text-slate-700">{{ $item->name }}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>

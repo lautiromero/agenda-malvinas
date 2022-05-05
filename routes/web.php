@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 //posts
@@ -25,9 +26,11 @@ Route::post('comment/store', [CommentController::class, 'store'])->name('comment
 //vistas
 Route::view('donar', 'donar')->name('donar');
 Route::view('porque-agenda', 'porque-agenda')->name('porque-agenda');
-Route::view('staff', 'staff')->name('staff');
 
 Route::get('mapa-del-sitio', App\Http\Livewire\Mapa::class)->name('mapa');
+
+
+Route::get('staff', [StaffController::class, 'index'])->name('staff');
 
 Route::get('contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');

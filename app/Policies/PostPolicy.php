@@ -14,6 +14,8 @@ class PostPolicy
     {
         if ($user->id == $post->user->id) {
             return true;
+        } elseif ($user->roles->pluck('name')[0] ?? '' === 'admin') {
+            return true;
         } else {
             return false;
         }

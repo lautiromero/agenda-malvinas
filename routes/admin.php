@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdController;
+use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\CommentController;
 
 //Routes
 
@@ -21,6 +23,10 @@ Route::resource('tags', TagController::class)->except('show')->names('admin.tags
 Route::resource('posts', PostController::class)->names('admin.posts');
 
 Route::resource('ads', AdController::class)->names('admin.ads');
+
+Route::resource('staff', StaffController::class)->only(['index', 'create', 'store', 'destroy'])->names('admin.staff');
+
+Route::resource('comments', CommentController::class)->only(['index', 'destroy'])->names('admin.comments');
 
 //uploader
 Route::post('/upload', [PostController::class, 'upload'])->middleware('can:admin.posts.upload');

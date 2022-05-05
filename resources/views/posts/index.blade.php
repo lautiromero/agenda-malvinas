@@ -6,7 +6,7 @@
         <div class="w-full sm:w-5/6">
             {{-- banner home --}}
             <div class="w-full">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="1">
             </div>
 
             {{-- content --}}
@@ -41,7 +41,7 @@
 
             {{-- banner home --}}
             <div class="w-full">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="2">
             </div>
 
             {{-- divider importante --}}
@@ -71,13 +71,13 @@
                 @endforeach
 
                 <div class="w-full h-80 publi-background p-2">
-                    @livewire('ads.home')
+                    <livewire:ads.home :orden="3">
                 </div>
                 <div class="w-full h-80 publi-background p-2">
-                    @livewire('ads.home')
+                    <livewire:ads.home :orden="4">
                 </div>
                 <div class="w-full h-80 publi-background p-2">
-                    @livewire('ads.home')
+                    <livewire:ads.home :orden="5">
                 </div>
             </div>
 
@@ -105,6 +105,9 @@
                     </p> 
                     <a href="{{ route('posts.show', $post) }}">
                         <h2 class="text-4xl font-extrabold font-heading mb-1">{{$post->name}}</h2>
+                    </a>
+                    <a href="{{ route('posts.show', $post) }}">
+                        <h4 class="text-xl mb-1">{{$post->extract}}</h4>
                     </a>
                     <p class="text-medium font-bold uppercase">
                         Por {{$post->user->name}}
@@ -173,9 +176,9 @@
             @endforeach
             </div>
 
-            {{-- banner home --}}
+            {{-- banner horizontal --}}
             <div class="w-full py-5">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="6">
             </div>
 
             {{-- divider importante --}}
@@ -190,7 +193,7 @@
 
             {{-- banner home --}}
             <div class="w-full py-5">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="7">
             </div>
 
             {{-- title mas/more noticias --}}
@@ -210,13 +213,13 @@
                 @endforeach
 
                 <div class="w-full h-80 publi-background p-2">
-                    @livewire('ads.home')
+                    <livewire:ads.home :orden="8">
                 </div>
                 <div class="w-full h-80 publi-background p-2">
-                    @livewire('ads.home')
+                    <livewire:ads.home :orden="9">
                 </div>
                 <div class="w-full h-80 publi-background p-2">
-                    @livewire('ads.home')
+                    <livewire:ads.home :orden="10">
                 </div>
             </div>
 
@@ -229,7 +232,7 @@
         {{-- sidebar publi --}}
         <div class="hidden sm:block w-1/6 publi-background py-2">
 
-            @livewire('ads.vertical')
+            <livewire:ads.vertical :orden="11">
 
         </div>
         
@@ -297,13 +300,18 @@
                     </a>
                 </div>
             </div>
+
+            {{-- banner horizontal --}}
+            <div class="w-full pt-5">
+               <livewire:ads.horizontal :orden="12">
+            </div>
         </div>
 
 
         {{-- sidebar publi --}}
         <div class="hidden sm:flex items-center justify-center py-3 w-1/6 publi-background">
 
-            @livewire('ads.vertical')
+            <livewire:ads.vertical :orden="13">
 
         </div>
     </div>

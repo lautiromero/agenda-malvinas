@@ -5,7 +5,7 @@
         <div class="w-full sm:w-5/6">
             {{-- banner horizontal --}}
             <div class="w-full">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="1">
             </div>
 
 
@@ -54,7 +54,7 @@
         {{-- sidebar publi --}}
         <div class="hidden sm:block w-1/6 publi-background py-2">
 
-            @livewire('ads.vertical')
+            <livewire:ads.vertical :orden="13">
 
         </div>
         

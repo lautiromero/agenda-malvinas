@@ -1,7 +1,7 @@
 <x-app-layout>
     {{-- banner horizontal --}}
     <div class="custom-container publi-background">
-        @livewire('ads.horizontal')
+        <livewire:ads.horizontal :orden="14">
     </div>
 
     {{-- breadcrumb & title container --}}
@@ -41,7 +41,7 @@
                    <x-post-share :post="$post"/>
                 </div>
                 {{-- post body --}}
-                <div class="w-full md:w-11/12 pt-6 md:pt-0">
+                <div class="w-full md:w-11/12 pt-6 md:pt-0 post-body">
 
                     <p class="subhead">
                     {!! $post->body !!}
@@ -79,7 +79,7 @@
 
                     {{-- banner horizontal --}}
                     <div class="py-8">
-                        @livewire('ads.horizontal')
+                        <livewire:ads.horizontal :orden="15">
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
 
             {{-- banner horizontal --}}
             <div class="py-8">
-                @livewire('ads.horizontal')
+                <livewire:ads.horizontal :orden="16">
             </div>
 
             <div class="pt-3 border-b border-gray-300">
@@ -147,7 +147,7 @@
         <div class="hidden sm:block w-1/5">
             {{-- publi --}}
             <div class="publi-background py-5">
-                @livewire('ads.vertical')
+                <livewire:ads.vertical :orden="17">
             </div>
 
             {{-- most viewed cat --}}
@@ -178,7 +178,7 @@
 
             {{-- publi sidebar --}}
             <div class="publi-background py-5">
-                @livewire('ads.vertical')
+                <livewire:ads.vertical :orden="18">
             </div>
         </div>
 

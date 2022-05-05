@@ -297,6 +297,20 @@ return [
             'active' => ['admin/ads/*'],
             'can' => 'admin.ads.index'
         ],
+        [
+            'text' => 'Staff',
+            'route'  => 'admin.staff.index',
+            'icon' => 'fas fa-fw fa-user-friends',
+            'active' => ['admin/staff/*'],
+            'can' => 'admin.staff.index'
+        ],
+        [
+            'text' => 'Comentarios',
+            'route'  => 'admin.comments.index',
+            'icon' => 'fas fa-fw fa-comments',
+            'active' => ['admin/comments/*'],
+            'can' => 'admin.comments.index'
+        ],
 
     ],
 

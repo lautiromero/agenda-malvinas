@@ -21,12 +21,18 @@ class PostIndex extends Component
 
     public function render()
     {
-
-        //traemos todos los posts
-        $posts = Post::where('name', 'LIKE', '%' . $this->search . '%')
-                    ->where('user_id', auth()->user()->id)
-                    ->orderBy('id', 'desc')
-                    ->paginate();
+        if(auth()->user()->roles->pluck('name')[0] ?? '' === 'admin')
+        {
+            $posts = Post::where('name', 'LIKE', '%' . $this->search . '%')
+            ->orderBy('id', 'desc')
+            ->paginate();
+        } else {
+            //traemos los posts del usuario actual
+            $posts = Post::where('name', 'LIKE', '%' . $this->search . '%')
+                        ->where('user_id', auth()->user()->id)
+                        ->orderBy('id', 'desc')
+                        ->paginate();
+        }
 
         //traemos los posts del usuario actual
         //$posts = Post::where('user_id', auth()->user()->id)->latest()->paginate();
