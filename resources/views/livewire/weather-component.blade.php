@@ -16,7 +16,7 @@ $data_length = count($data);
         @for ($i = 0; $i < $data_length; $i++)
         
             <div class="swiper-slide">
-                <img class="inline object-cover w-7" src="http://openweathermap.org/img/wn/{{$data[$i]['icon']}}@2x.png" alt="">
+                <img class="inline object-cover w-7" src="https://openweathermap.org/img/wn/{{$data[$i]['icon']}}@2x.png" alt="">
                 <span>{{$data[$i]['temp']}}° {{$data[$i]['name']}}</span> 
             </div>
          
