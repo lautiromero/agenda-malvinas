@@ -32,38 +32,53 @@
         <div class="grid md:grid-cols-4 gap-x-12 px-12 md:px-0 pt-5 md:pt-16">
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/300.png')}}" alt="donar 300" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://mpago.la/1bHHdRN" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a>
+                </div> 
             </div>
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/500.png')}}" alt="donar 500" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://mpago.la/1V6dgqc" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a>
+                </div> 
             </div>
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/700.png')}}" alt="donar 700" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://mpago.la/1XwFu8A" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a>
+                </div> 
             </div>
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/900.png')}}" alt="donar 900" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://mpago.la/1frgH3u" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a>
+                </div> 
             </div>
         </div>
 
         <div class="grid md:grid-cols-4 gap-x-12 px-12 md:px-0 pt-12">
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/300-SUS.png')}}" alt="donar 300" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808480a8d7f60180aecf97ec01e0" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
             </div>
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/400-SUS.png')}}" alt="donar 500" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808480adbe7f0180aed0bc14007f" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a>
+                </div> 
             </div>
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/500-SUS.png')}}" alt="donar 700" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808480adf5690180aed19536005c" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a>
+                </div> 
             </div>
             <div class="pt-6 md:pt-0">
                 <img src="{{asset('/images/donar/600-SUS.png')}}" alt="donar 900" class="w-full">
-                <div class="text-center py-3"><a href="#" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a></div> 
+                <div class="text-center py-3">
+                    <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808480a8d7d10180aed1ecc601c6" target="_blank" class="text-cyan-600 hover:bg-cyan-500 hover:text-white px-6 py-1 rounded-md text-2xl font-extrabold font-heading border-2 border-cyan-500">SER PARTE</a>
+                </div> 
             </div>
         </div>
         <div class="md:w-3/5 mx-auto py-14" id="contacto">
