@@ -81,7 +81,7 @@ class PostController extends Controller
         return view('posts.show', compact('post', 'otras_cat', 'vieweds', 'comments', 'cat_vieweds'));
     }
 
-    public function showById($id)
+    public function showById($age, $month, $day, $id)
     {
         $post = Post::find($id);
         //incrementamos las vistas

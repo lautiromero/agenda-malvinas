@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://agenda-malvinas.test'),
+    'url' => env('APP_URL', 'https://agendamalvinas.com.ar'),
 
     'asset_url' => env('ASSET_URL'),
 
