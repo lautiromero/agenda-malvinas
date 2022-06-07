@@ -91,7 +91,8 @@
                   type="text"
                   name="name"
                   class="block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
-                />
+                  required  
+                  />
                 @error('name')
                     <p class="text-red-600"><strong>{{$message}}</strong></p>
                 @enderror
@@ -101,7 +102,8 @@
                   type="text"
                   name="email"
                   class="block bg-white w-full border border-cyan-500 rounded-md py-2 px-2 mt-1 mb-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm"
-                />
+                  required
+                  />
                 @error('email')
                     <p class="text-red-600"><strong>{{$message}}</strong></p>
                 @enderror
@@ -115,8 +117,14 @@
                 @error('comment')
                     <p class="text-red-600"><strong>{{$message}}</strong></p>
                 @enderror
+
+                {!! NoCaptcha::display() !!}
+                @error('g-recaptcha-response')
+                    <p class="text-red-600"><strong>{{$message}}</strong></p>
+                @enderror
                 <button type="submit" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-3 py-1 mt-2 rounded-md text-sm font-medium">Enviar</button>
             </form>
+            {!! NoCaptcha::renderJs('es') !!}
         </div>
     </div>
 </x-app-layout>

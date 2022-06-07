@@ -18,11 +18,12 @@ class ContactoController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'comment' => 'required'
+            'comment' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
 
         $correo = new ContactoMailable($request);
-        Mail::to('casacorrea50@gmail.com')->send($correo);
+        Mail::to('contacto@agendamalvinas.com.ar')->send($correo);
 
         return redirect()->route('donar')->with('info', 'Recibimos tu mensaje, vamos a responderte pronto.');
     }
