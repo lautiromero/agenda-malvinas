@@ -82,9 +82,10 @@
 
     tinymce.init({selector:'#body',
             plugins: 'image imagetools autolink lists media table code',
-            toolbar: 'checklist code export formatpainter undo redo | styleselect | fontselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent image editimage pageembed permanentpen table tableofcontents language code',
+            toolbar: 'checklist export formatpainter undo redo | styleselect | fontselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent image editimage pageembed permanentpen table tableofcontents language code',
             toolbar_mode: 'floating',
             tinycomments_mode: 'embedded',
+            extended_valid_elements : "script[charset|defer|language|src|type]",
             language: 'es',
             content_langs: [
                 { title: 'Spanish', code: 'es' }

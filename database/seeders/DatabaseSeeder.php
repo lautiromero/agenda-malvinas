@@ -23,11 +23,11 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
 
         $this->call(UserSeeder::class);
-        // $this->call(CategoriesSeeder::class);
+        $this->call(CategoriesSeeder::class);
         // Tag::factory(8)->create();
         // $this->call(TagSeeder::class);
         // $this->call(PostSeeder::class);
-        // $this->call(AdSeeder::class);
+        $this->call(AdSeeder::class);
         // $this->call(StaffSeeder::class);
     }
 }

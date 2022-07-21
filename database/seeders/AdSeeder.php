@@ -130,28 +130,34 @@ class AdSeeder extends Seeder
 
         foreach ($ads as $ad) {
 
-            switch ($ad->type) {
-                case 'horizontal':
-                    Image::factory(1)->typeHorizontal()->create([
-                        'imageable_id' => $ad->id,
-                        'imageable_type' => Ad::class
-                    ]);
-                    break;
-                
-                case 'vertical':
-                    Image::factory(1)->typeVertical()->create([
-                        'imageable_id' => $ad->id,
-                        'imageable_type' => Ad::class
-                    ]);
-                    break;
+          Image::create([
+            'imageable_id' => $ad->id,
+            'imageable_type' => Ad::class,
+            'url' => 'https://upload.wikimedia.org/wikipedia/commons/6/64/Ejemplo.png'
+          ]);
 
-                case 'nota-home':
-                    Image::factory(1)->typeHome()->create([
-                        'imageable_id' => $ad->id,
-                        'imageable_type' => Ad::class
-                    ]);
-                    break;
-            }
+            // switch ($ad->type) {
+            //     case 'horizontal':
+            //         Image::factory(1)->typeHorizontal()->create([
+            //             'imageable_id' => $ad->id,
+            //             'imageable_type' => Ad::class
+            //         ]);
+            //         break;
+            //     
+            //     case 'vertical':
+            //         Image::factory(1)->typeVertical()->create([
+            //             'imageable_id' => $ad->id,
+            //             'imageable_type' => Ad::class
+            //         ]);
+            //         break;
+            //
+            //     case 'nota-home':
+            //         Image::factory(1)->typeHome()->create([
+            //             'imageable_id' => $ad->id,
+            //             'imageable_type' => Ad::class
+            //         ]);
+            //         break;
+            // }
         }
 
     }
