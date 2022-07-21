@@ -81,8 +81,8 @@
     // tinimce editor
 
     tinymce.init({selector:'#body',
-            plugins: 'image imagetools autolink lists media table',
-            toolbar: 'checklist code export formatpainter undo redo | styleselect | fontselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent image editimage pageembed permanentpen table tableofcontents language',
+            plugins: 'image imagetools autolink lists media table code',
+            toolbar: 'checklist code export formatpainter undo redo | styleselect | fontselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent image editimage pageembed permanentpen table tableofcontents language code',
             toolbar_mode: 'floating',
             tinycomments_mode: 'embedded',
             language: 'es',

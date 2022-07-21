@@ -97,7 +97,7 @@
 
               <div class="flex space-x-7">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="{{ route('donar') }}" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">DONACIÓN</a>
+                <a href="{{ route('donar') }}" class="bg-cyan-500 text-white hover:bg-white hover:text-cyan-500 border border-cyan-500 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">QUIERO SER PARTE</a>
               </div>
 
                 {{-- perfil menu --}}
@@ -155,7 +155,7 @@
 
         <a href="{{ route('contacto') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Contacto</a>
         
-        <a href="{{ route('donar') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Donación</a>
+        <a href="{{ route('donar') }}" class="text-white hover:bg-gray-700 hover:text-white block px-3 py-1 rounded-md text-base font-medium">Quiero ser parte</a>
         
         @auth
           @can('admin.home')
